@@ -99,6 +99,17 @@ foreign key (codigo_materia) references TblMaterias(codigo_materia)
 );
 
 
+-- PROCEDURES --
 
+-- INSERT --
 
-
+Create procedure SP_InsertarDocentes (IN SPnombre_docente varchar(50)
+, IN SPapellido_docente varchar(50))
+begin  
+insert into Tbl_Docentes (
+nombre_docente,
+apellido_docente)
+values (
+SPnombre_docentes,
+SPapellido_docentes);
+end
