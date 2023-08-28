@@ -1,3 +1,4 @@
+drop database Sisaca;
 create database Sisaca;
 use Sisaca;
 
@@ -8,12 +9,6 @@ id_docente int auto_increment,
 nombre_docente varchar(50) not null, 
 apellido_docente varchar(50) not null,
 primary key (id_docente)
-);
-
-Create table TblCarreras (
-codigo_carrera char(3) not null, 
-nombre_carrera varchar(50) not null,
-primary key (codigo_carrera)
 );
 
 Create table TblTipoMateria (
@@ -34,6 +29,14 @@ rol varchar(15) not null,
 primary key (id_rol)
 );
 
+Create table TblCarreras (
+codigo_carrera char(3) not null,
+codigo_area char(3) not null,
+nombre_carrera varchar(50) not null,
+primary key (codigo_carrera),
+foreign key (codigo_area) references TblAreas(codigo_area)
+);
+
 Create table TblUsuarios (
 id_usuario int auto_increment not null,
 id_rol int not null,
@@ -45,6 +48,7 @@ foreign key (id_rol) references TblRoles(id_rol)
 Create table TblEstudiantes (
 matricula char(7) not null,
 id_usuario int not null,
+codigo_carrera char(3) not null,
 nombre_estudiante varchar(50),
 apellido_estudiante varchar(50),
 primary key (matricula),
@@ -103,6 +107,7 @@ foreign key (codigo_materia) references TblMaterias(codigo_materia)
 
 -- INSERT --
 
+DELIMITER $$
 Create procedure SP_InsertarDocentes (IN SPnombre_docente varchar(50)
 , IN SPapellido_docente varchar(50))
 begin  
@@ -112,4 +117,62 @@ apellido_docente)
 values (
 SPnombre_docentes,
 SPapellido_docentes);
-end
+end$$
+
+Create procedure SP_InsertarCarreras (IN SPcodigo_carrera char(3)
+, IN SPnombre_carrera varchar(50))
+begin
+insert into Tbl_Carreras (
+codigo_carrera,
+nombre_carrera)
+values (
+SPcodigo_carrera,
+SPnombre_carrera);
+end$$
+
+Create procedure SP_InsertarTipoMateria (IN SPtipo_materia varchar(10))
+begin
+insert into Tbl_TipoMateria (
+tipo_materia)
+values (
+SPtipo_materia);
+end$$
+
+Create procedure SP_InsertarAreas (IN SPcodigo_area char(3),
+IN nombre_area varchar(50))
+begin
+insert into Tbl_Areas (
+codigo_area,
+nombre_area)
+values (
+SPcodigo_area,
+SPnombre_area);
+end$$
+
+Create procedure SP_InsertarRoles (IN SProl varchar(15))
+begin
+insert into Tbl_Roles (
+rol)
+values (
+SProl);
+end$$
+
+Create procedure SP_InsertarUsuarios (IN SPid_rol int,
+IN SPclave varchar(64))
+begin
+insert into Tbl_Usuarios (
+id_rol,
+clave)
+values (
+SPid_rol,
+SPclave);
+end$$
+
+Create procedure SP_InsertarEstudiantes (IN SPmatricula char(7),
+IN SPid_usuario int, IN SPnombre_estudiante varchar(50), IN SPapellido_estudiante varchar(50))
+begin
+insert into Tbl_Estudiantes (
+matricula,
+id_usuario,
+nombre_estudiante
+apellido_estudiante
