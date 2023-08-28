@@ -268,5 +268,7 @@ Create procedure SP_EditarCarreras (IN SPcodigo_carrera char(3)
 , IN SPnombre_carrera varchar(50), IN SPmax_creditos int)
 begin
 update TblCarreras
-set codigo_carrera = SPcodigo_carrera, nombre_carrera = SPnombre_carrera, max_creditos = SPmax_creditos) where codigo_carrera = SPcodigo_carrera
+set codigo_carrera = SPcodigo_carrera, nombre_carrera = SPnombre_carrera, max_creditos = SPmax_creditos where codigo_carrera = SPcodigo_carrera;
+end$$
 
+Create procedure SP_Editar
