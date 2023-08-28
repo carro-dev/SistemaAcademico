@@ -271,4 +271,126 @@ update TblCarreras
 set codigo_carrera = SPcodigo_carrera, nombre_carrera = SPnombre_carrera, max_creditos = SPmax_creditos where codigo_carrera = SPcodigo_carrera;
 end$$
 
-Create procedure SP_Editar
+Create procedure SP_EditarTipoMateria(IN SPid_tipomateria int, IN SPtipo_materia varchar(10))
+begin
+update TblTipoMateria
+set tipo_materia = SPtipo_materia where id_tipomateria = SPid_tipomateria;
+end$$
+
+Create procedure SP_EditarAreas(IN SPcodigo_area char(3),IN SPnombre_area varchar(50))
+begin
+update TblAreas
+set codigo_area = SPcodigo_area, nombre_area = SPnombre_area where codigo_area = SPcodigo_area;
+end$$
+
+Create procedure SP_EditarRoles(IN SPid_rol int, IN SProl varchar(15))
+begin
+update TblRoles
+set rol = SProl where id_rol = SPid_rol;
+end$$
+
+Create procedure SP_EditarUsuarios(IN SPid_usuario int, IN SPid_rol int, IN SPclave varchar(64))
+begin
+update TblUsuarios
+set id_rol = SPid_rol, clave = SPclave where id_usuario = SPid_usuario;
+end$$
+
+Create procedure SP_EditarEstudiantes(IN SPmatricula char(7), IN SPid_usuario int, IN SPcodigo_carrera char(3), IN SPnombre_estudiante varchar(50), IN SPapellido_estudiante varchar(50))
+begin
+update TblEstudiantes
+set id_usuario = SPid_usuario, codigo_carrera = SPcodigo_carrera, nombre_estudiante = SPnombre_estudiante, apellido_estudiante = SPapellido_estudiante where matricula = SPmatricula;
+end$$ 
+
+Create procedure SP_EditarAdmin(IN SPcodigo_admin char(5), IN SPid_usario int)
+begin
+update TblAdmin
+set codigo_admin = SPcodigo_admin, id_usuario = SPid_usuario where codigo_admin = SPcodigo_admin;
+end$$
+
+Create procedure SP_EditarMaterias(IN SPcodigo_materia char(7), IN SPnombre_materia varchar(50), IN SPid_tipomateria INT, IN SPcodigo_area char(3), IN SPcodigo_carrera char(3), IN SPcreditos int)
+begin
+update TblMaterias
+set codigo_materia = SPcodigo_materia, nombre_materia = SPnombre_materia, id_tipomateria = SPid_tipomateria, codigo_area =SPcodigo_area, codigo_carrera = SPcodigo_carrera, creditos = SPcreditos where codigo_materia = SPcodigo_materia;
+end$$
+
+Create procedure SP_EditarSecciones(IN SPid_seccion int, IN SPnumero_seccion int, IN SPcodigo_materia char(7), IN SPid_docente int, IN SPhorario Json)
+begin
+update TblSecciones
+set numero_seccion = SPnumero_seccion, codigo_materia = SPcodigo_materio, id_docente = SPid_docente, horario = SPhorario where id_seccion = SPid_seccion;
+end$$
+
+Create procedure SP_EditarAlumnosSeccion(IN SPmatricula char(7), IN SPid_seccion int)
+begin
+update TblAlumnosSeccion
+set matricula = SPmatricula, id_seccion = SPid_seccion where matricula = SPmatricula and id_seccion = SPid_seccion; 
+end$$
+
+Create procedure SP_EditarMateriasEnCarrera(IN SPcodigo_carrera char(3), IN SPcodigo_materia char(7))
+begin
+update TblMateriasEnCarrera
+set codigo_carrera = SPcodigo_carrera, codigo_materia = SPcodigo_materia where codigo_carrera = SPcodigo_carrera and codigo_materia = SPcodigo_materia;
+end$$
+
+-- DELETE --
+
+Create procedure SP_BorrarDocentes (IN SPid_docente int)
+begin
+delete from TblDocentes where id_docente = SPid_docente;
+end$$
+
+Create procedure SP_BorrarCarreras (IN SPcodigo_carrera char(3))
+begin
+delete from TblCarreras where codigo_carrera = SPcodigo_carrera;
+end$$
+
+Create procedure SP_BorrarTipoMateria(IN SPid_tipomateria int)
+begin
+delete from TblTipoMateria where id_tipomateria = SPid_tipomateria;
+end$$
+
+Create procedure SP_BorrarAreas(IN SPcodigo_area char(3))
+begin
+delete from TblAreas where codigo_area = SPcodigo_area;
+end$$
+
+Create procedure SP_BorrarRoles(IN SPid_rol int)
+begin
+delete from TblRoles where id_roles = SPid_rol;
+end$$
+
+Create procedure SP_BorrarUsuarios(IN SPid_usuario int)
+begin
+delete from TblUsuarios where id_usuario = SPid_usuario;
+end$$
+
+Create procedure SP_BorrarEstudiantes(IN SPmatricula char(7))
+begin
+delete from TblEstudiantes where matricula = SPmatricula;
+end$$
+
+Create procedure SP_BorrarAdmin(IN SPcodigo_admin char(5))
+begin
+delete from TblEstudiantes where codigo_admin = SPcodigo_admin;
+end$$
+
+Create procedure SP_BorrarMaterias(IN SPcodigo_materia char(7))
+begin
+delete from TblMaterias where codigo_materia = SPcodigo_materia;
+end$$
+
+Create procedure SP_BorrarSecciones(IN SPid_seccion int)
+begin
+delete from TblSecciones where id_seccion = SPid_seccion;
+end$$
+
+Create procedure SP_BorrarAlumnosSeccion(IN SPmatricula char(7), IN SPid_seccion int)
+begin
+delete from TblAlumnosSeccion where matricula = SPmatricula and id_seccion = SPid_seccion;
+end$$
+
+Create procedure SP_BorrarMateriasEnCarrera(IN SPcodigo_carrera char(3), IN SPcodigo_materia char(7))
+begin
+delete from TblMateriasEnCarrera where codigo_carrera = SPcodiga_carrera and codigo_materia = SPcodigo_materia;
+end$$
+
+
