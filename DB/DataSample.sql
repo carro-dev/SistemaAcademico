@@ -54,4 +54,15 @@ Insert into TblSecciones (numero_seccion,codigo_materia,id_docente,horario) valu
 Insert into TblSecciones (numero_seccion,codigo_materia,id_docente,horario) values (1,"CBM101",2,'{"Lunes":[{"Inicio":"9:00","Fin":"11:00"}],"Miercoles":[{"Inicio":"9:00","Fin":"11:00"}],"Jueves":[{"Inicio":"9:00","Fin":"10:00"}]}');
 Insert into TblSecciones (numero_seccion,codigo_materia,id_docente,horario) values (2,"CBM101",2,'{"Martes":[{"Inicio":"7:00","Fin":"9:00"}],"Jueves":[{"Inicio":"7:00","Fin":"9:00"}],"Viernes":[{"Inicio":"10:00","Fin":"11:00"}]}');
 
+-- AlumnosSeccion --
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1090096",1);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1090096",3);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107613",1);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107613",3);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107614",2);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107614",7);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107615",2);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107615",7);
+Insert into TblAlumnosSeccion (matricula,id_seccion) values ("1107616",7);
+
 
