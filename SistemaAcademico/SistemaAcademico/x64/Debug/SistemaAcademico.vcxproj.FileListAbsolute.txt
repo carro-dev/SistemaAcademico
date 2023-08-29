@@ -1,0 +1,6 @@
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\DB\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.AssemblyReference.cache
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\DB\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.Login.resources
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\DB\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.GenerateResource.cache
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.AssemblyReference.cache
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.Login.resources
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.GenerateResource.cache
