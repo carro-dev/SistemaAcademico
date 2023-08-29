@@ -113,7 +113,7 @@ DELIMITER $$
 Create procedure SP_InsertarDocentes (IN SPnombre_docente varchar(50)
 , IN SPapellido_docente varchar(50))
 begin  
-insert into Tbl_Docentes (
+insert into TblDocentes (
 nombre_docente,
 apellido_docente)
 values (
@@ -124,7 +124,7 @@ end$$
 Create procedure SP_InsertarCarreras (IN SPcodigo_carrera char(3)
 , IN SPnombre_carrera varchar(50), IN SPmax_creditos int)
 begin
-insert into Tbl_Carreras (
+insert into TblCarreras (
 codigo_carrera,
 nombre_carrera,
 max_creditos)
@@ -136,7 +136,7 @@ end$$
 
 Create procedure SP_InsertarTipoMateria (IN SPtipo_materia varchar(10))
 begin
-insert into Tbl_TipoMateria (
+insert into TblTipoMateria (
 tipo_materia)
 values (
 SPtipo_materia);
@@ -145,7 +145,7 @@ end$$
 Create procedure SP_InsertarAreas (IN SPcodigo_area char(3),
 IN nombre_area varchar(50))
 begin
-insert into Tbl_Areas (
+insert into TblAreas (
 codigo_area,
 nombre_area)
 values (
@@ -155,7 +155,7 @@ end$$
 
 Create procedure SP_InsertarRoles (IN SProl varchar(15))
 begin
-insert into Tbl_Roles (
+insert into TblRoles (
 rol)
 values (
 SProl);
@@ -164,7 +164,7 @@ end$$
 Create procedure SP_InsertarUsuarios (IN SPid_rol int,
 IN SPclave varchar(64))
 begin
-insert into Tbl_Usuarios (
+insert into TblUsuarios (
 id_rol,
 clave)
 values (
@@ -175,7 +175,7 @@ end$$
 Create procedure SP_InsertarEstudiantes (IN SPmatricula char(7),
 IN SPid_usuario int, IN SPcodigo_carrera char(3), IN SPnombre_estudiante varchar(50), IN SPapellido_estudiante varchar(50))
 begin
-insert into Tbl_Estudiantes (
+insert into TblEstudiantes (
 matricula,
 id_usuario,
 codigo_carrera,
@@ -192,7 +192,7 @@ end$$
 Create procedure SP_InsertarAdmin (IN SPcodigo_admin char(5), 
 IN SPid_usuario int)
 begin
-insert into Tbl_Admin (
+insert into TblAdmin (
 codigo_admin,
 id_usuario)
 values (
@@ -203,7 +203,7 @@ end$$
 Create procedure SP_InsertarMaterias (IN SPcodigo_materia char(7), 
 IN SPnombre_materia varchar(50), IN SPid_tipomateria int, IN SPcodigo_area char(3), IN SPcodigo_carrera char(3), IN SPcreditos int)
 begin
-insert into Tbl_Materias (
+insert into TblMaterias (
 codigo_materia,
 nombre_materia,
 id_tipomateria,
@@ -221,7 +221,7 @@ end$$
 
 Create procedure SP_InsertarSecciones (IN SPnumero_seccion int, IN SPcodigo_materia char(7), IN SPid_docente int, IN SPhorario json)
 begin
-insert into Tbl_Secciones (
+insert into TblSecciones (
 numero_seccion,
 codigo_materia,
 id_docente,
@@ -236,7 +236,7 @@ end$$
 Create procedure SP_InsertarAlumnosSeccion (IN SPmatricula char(7), 
 IN SPid_seccion int)
 begin
-insert into Tbl_AlumnosSeccion (
+insert into TblAlumnosSeccion (
 matricula,
 id_seccion)
 values (
@@ -247,7 +247,7 @@ end$$
 Create procedure SP_InsertarMateriasEnCarrera (IN SPcodigo_carrera char(3),
 IN SPcodigo_materia char(7))
 begin
-insert into Tbl_MateriasEnCarrera (
+insert into TblMateriasEnCarrera (
 codigo_carrera,
 codigo_materia)
 values (
