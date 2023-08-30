@@ -1,7 +1,7 @@
 use Sisaca;
 
 -- Roles --
-insert into TblRoles (rol) values ("Estudiantes");
+insert into TblRoles (rol) values ("Estudiante");
 insert into TblRoles (rol) values ("Admin");
 
 -- Usuarios -- 
@@ -26,7 +26,7 @@ Insert into TblEstudiantes values ("1090096",1,"IDS","Carlos","Luciano");
 Insert into TblEstudiantes values ("1107613",2,"IDS","Aliany","Gonzalez");
 Insert into TblEstudiantes values ("1107614",3,"IDS","Metzly","Reyes");
 Insert into TblEstudiantes values ("1107615",4,"SIS","Diego","Valentim");
-Insert into TblEstudiantes values ("1107616",4,"PSI","Jhon","Torres");
+Insert into TblEstudiantes values ("1107616",5,"PSI","Jhon","Torres");
 
 -- Docentes --
 Insert into TblDocentes (nombre_docente,apellido_docente) values ("Juan","Perez");
