@@ -1,5 +1,7 @@
 #pragma once
 #include <mysql.h>
+#include <iostream>
+#include <msclr/marshal_cppstd.h>
 #include "DataHandler.h"
 
 
@@ -130,7 +132,19 @@ namespace SistemaAcademico {
 		}
 #pragma endregion
 	private: System::Void btnLogin_Click(System::Object^ sender, System::EventArgs^ e) {
-		DataHandler::conexionMySQl();
+
+		std::string username = msclr::interop::marshal_as<std::string>(txtMatricula->Text);
+		std::string password = msclr::interop::marshal_as<std::string>(txtPassw->Text);
+
+		bool validateInf = DataHandler::login(username, password);
+		if (validateInf) {
+			MessageBox::Show("Datos correcto!!!");
+		}
+		else {
+			MessageBox::Show("Datos incorrectos");
+		}
+
+
 	}
 };
 }
