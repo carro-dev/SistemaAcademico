@@ -436,9 +436,17 @@ select TblEstudiantes.matricula,TblCarreras.nombre_carrera,TblEstudiantes.nombre
 TblRoles.rol from (((TblUsuarios
 inner join TblEstudiantes on TblUsuarios.id_usuario = TblEstudiantes.id_usuario)
 inner join TblRoles on TblUsuarios.id_rol = TblRoles.id_rol)
-inner join TblCarreras on TblCarreras.codigo_carrera = TblEstudiantes.codigo_carrera
-) where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
+inner join TblCarreras on TblCarreras.codigo_carrera = TblEstudiantes.codigo_carrera) 
+where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
 end$$
 
-
+DELIMITER $$
+Create procedure SP_GetPensum(IN SPcodigo_materia char(7))
+begin
+select TblCarreras.nombre_carrera,TblMaterias.codigo_materia,TblMaterias.nombre_materia,TblMaterias.creditos
+from ((TblMateriasEnCarrera
+inner join TblCarreras on TblMateriasEnCarrera.codigo_carrera = TblCarreras.codigo_carrera)
+inner join TblMaterias on TblMateriasEnCarrera.codigo_materia = TblMaterias.codigo_materia)
+where TblMateriasEnCarrera.codigo_carrera = SPcodigo_materia;
+end$$
 
