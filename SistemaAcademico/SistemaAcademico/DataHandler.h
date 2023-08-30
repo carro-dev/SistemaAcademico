@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
+#include "Entities.h"
 
 namespace DataMySql {
 	class DataHandler {
 	public:
-		static void conexionMySQl();
-		static bool login(const std::string&,const std::string& password);
+		static Entities::Estudiantes login(const std::string&,const std::string& password);
 	};
 }
 

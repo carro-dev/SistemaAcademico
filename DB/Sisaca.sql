@@ -432,10 +432,12 @@ end$$
 DELIMITER $$
 Create procedure SP_GetUser(IN SPmatricula char(7),IN SPclave varchar(64))
 begin
-select TblEstudiantes.matricula,TblEstudiantes.codigo_carrera,TblEstudiantes.nombre_estudiante,TblEstudiantes.apellido_estudiante,
-TblRoles.rol from ((TblUsuarios
+select TblEstudiantes.matricula,TblCarreras.nombre_carrera,TblEstudiantes.nombre_estudiante,TblEstudiantes.apellido_estudiante,
+TblRoles.rol from (((TblUsuarios
 inner join TblEstudiantes on TblUsuarios.id_usuario = TblEstudiantes.id_usuario)
-inner join TblRoles on TblUsuarios.id_rol = TblRoles.id_rol) where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
+inner join TblRoles on TblUsuarios.id_rol = TblRoles.id_rol)
+inner join TblCarreras on TblCarreras.codigo_carrera = TblEstudiantes.codigo_carrera
+) where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
 end$$
 
 call SP_GetUser("1090096","test1");

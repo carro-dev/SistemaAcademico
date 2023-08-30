@@ -1,9 +1,9 @@
 #pragma once
 #include <mysql.h>
-#include <iostream>
 #include <msclr/marshal_cppstd.h>
 #include "DataHandler.h"
-
+#include "Entities.h"
+#include "MainEstudiantes.h"
 
 namespace SistemaAcademico {
 
@@ -14,6 +14,7 @@ namespace SistemaAcademico {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace DataMySql;
+	using namespace Entities;
 
 
 
@@ -23,6 +24,8 @@ namespace SistemaAcademico {
 	public ref class Login : public System::Windows::Forms::Form
 	{
 	public:
+
+
 		Login(void)
 		{
 			InitializeComponent();
@@ -83,8 +86,10 @@ namespace SistemaAcademico {
 			// 
 			this->txtPassw->Location = System::Drawing::Point(82, 133);
 			this->txtPassw->Name = L"txtPassw";
+			this->txtPassw->PasswordChar = '*';
 			this->txtPassw->Size = System::Drawing::Size(127, 20);
 			this->txtPassw->TabIndex = 1;
+			this->txtPassw->UseSystemPasswordChar = true;
 			// 
 			// btnLogin
 			// 
@@ -136,15 +141,16 @@ namespace SistemaAcademico {
 		std::string username = msclr::interop::marshal_as<std::string>(txtMatricula->Text);
 		std::string password = msclr::interop::marshal_as<std::string>(txtPassw->Text);
 
-		bool validateInf = DataHandler::login(username, password);
-		if (validateInf) {
-			MessageBox::Show("Datos correcto!!!");
+		Estudiantes estudiante = DataHandler::login(username, password);
+		if (estudiante.Getmatricula() != "") {
+			MainEstudiantes^ mainestudiantes = gcnew MainEstudiantes(estudiante);
+			mainestudiantes->Show();
+			this->Hide();
+	
 		}
 		else {
-			MessageBox::Show("Datos incorrectos");
+			MessageBox::Show("Error: Datos Incorrectos","Error",MessageBoxButtons::OK,MessageBoxIcon::Error);
 		}
-
-
 	}
 };
 }

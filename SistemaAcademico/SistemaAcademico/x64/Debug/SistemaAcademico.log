@@ -1,5 +1,5 @@
-﻿  DataHandler.cpp
-C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\DataHandler.cpp(52,22): warning C4244: 'initializing': conversion from 'uint64_t' to 'int', possible loss of data
-C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\DataHandler.cpp(26,19): warning C4101: 'row': unreferenced local variable
-  DataHandler.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  Login.cpp
+  MainEstudiantes.cpp
+  Generando código...
+  DataHandler.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   SistemaAcademico.vcxproj -> C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.exe
