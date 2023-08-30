@@ -126,6 +126,7 @@
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainEstudiantes.cpp" />
+    <ClCompile Include="Pensum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataHandler.h" />
@@ -136,6 +137,9 @@
     <ClInclude Include="MainEstudiantes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Pensum.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Login.resx">
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainEstudiantes.resx">
       <DependentUpon>MainEstudiantes.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pensum.resx">
+      <DependentUpon>Pensum.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

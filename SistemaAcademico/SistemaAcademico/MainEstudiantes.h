@@ -49,6 +49,9 @@ namespace SistemaAcademico {
 
 	private: System::Windows::Forms::Label^ lblNombre;
 	private: System::Windows::Forms::Label^ lblRol;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ btnPensum;
+
 
 
 	protected:
@@ -70,6 +73,9 @@ namespace SistemaAcademico {
 			this->lblCarrera = (gcnew System::Windows::Forms::Label());
 			this->lblNombre = (gcnew System::Windows::Forms::Label());
 			this->lblRol = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btnPensum = (gcnew System::Windows::Forms::Button());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// lblMatricula
@@ -108,17 +114,41 @@ namespace SistemaAcademico {
 			this->lblRol->TabIndex = 4;
 			this->lblRol->Text = L"Rol";
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->panel1->Controls->Add(this->btnPensum);
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(137, 511);
+			this->panel1->TabIndex = 5;
+			// 
+			// btnPensum
+			// 
+			this->btnPensum->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->btnPensum->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->btnPensum->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->btnPensum->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnPensum->Location = System::Drawing::Point(-1, 78);
+			this->btnPensum->Name = L"btnPensum";
+			this->btnPensum->Size = System::Drawing::Size(138, 32);
+			this->btnPensum->TabIndex = 6;
+			this->btnPensum->Text = L"Ver Pensum";
+			this->btnPensum->UseVisualStyleBackColor = false;
+			// 
 			// MainEstudiantes
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(701, 509);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->lblRol);
 			this->Controls->Add(this->lblNombre);
 			this->Controls->Add(this->lblCarrera);
 			this->Controls->Add(this->lblMatricula);
 			this->Name = L"MainEstudiantes";
 			this->Text = L"MainEstudiantes";
+			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

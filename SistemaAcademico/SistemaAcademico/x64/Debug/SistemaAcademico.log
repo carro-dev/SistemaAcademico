@@ -1,5 +1,6 @@
 ﻿  Login.cpp
   MainEstudiantes.cpp
+  Pensum.cpp
   Generando código...
   DataHandler.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   SistemaAcademico.vcxproj -> C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.exe
