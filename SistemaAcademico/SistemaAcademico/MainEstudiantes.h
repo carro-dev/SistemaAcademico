@@ -1,5 +1,6 @@
 #pragma once
 #include "Entities.h"
+#include "Pensum.h"
 
 namespace SistemaAcademico {
 
@@ -81,36 +82,40 @@ namespace SistemaAcademico {
 			// lblMatricula
 			// 
 			this->lblMatricula->AutoSize = true;
-			this->lblMatricula->Location = System::Drawing::Point(173, 44);
+			this->lblMatricula->Location = System::Drawing::Point(231, 54);
+			this->lblMatricula->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblMatricula->Name = L"lblMatricula";
-			this->lblMatricula->Size = System::Drawing::Size(50, 13);
+			this->lblMatricula->Size = System::Drawing::Size(61, 16);
 			this->lblMatricula->TabIndex = 0;
 			this->lblMatricula->Text = L"Matricula";
 			// 
 			// lblCarrera
 			// 
 			this->lblCarrera->AutoSize = true;
-			this->lblCarrera->Location = System::Drawing::Point(173, 88);
+			this->lblCarrera->Location = System::Drawing::Point(231, 108);
+			this->lblCarrera->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblCarrera->Name = L"lblCarrera";
-			this->lblCarrera->Size = System::Drawing::Size(41, 13);
+			this->lblCarrera->Size = System::Drawing::Size(52, 16);
 			this->lblCarrera->TabIndex = 1;
 			this->lblCarrera->Text = L"Carrera";
 			// 
 			// lblNombre
 			// 
 			this->lblNombre->AutoSize = true;
-			this->lblNombre->Location = System::Drawing::Point(173, 130);
+			this->lblNombre->Location = System::Drawing::Point(231, 160);
+			this->lblNombre->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblNombre->Name = L"lblNombre";
-			this->lblNombre->Size = System::Drawing::Size(44, 13);
+			this->lblNombre->Size = System::Drawing::Size(56, 16);
 			this->lblNombre->TabIndex = 3;
 			this->lblNombre->Text = L"Nombre";
 			// 
 			// lblRol
 			// 
 			this->lblRol->AutoSize = true;
-			this->lblRol->Location = System::Drawing::Point(173, 171);
+			this->lblRol->Location = System::Drawing::Point(231, 210);
+			this->lblRol->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblRol->Name = L"lblRol";
-			this->lblRol->Size = System::Drawing::Size(23, 13);
+			this->lblRol->Size = System::Drawing::Size(28, 16);
 			this->lblRol->TabIndex = 4;
 			this->lblRol->Text = L"Rol";
 			// 
@@ -119,8 +124,9 @@ namespace SistemaAcademico {
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->panel1->Controls->Add(this->btnPensum);
 			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(137, 511);
+			this->panel1->Size = System::Drawing::Size(183, 629);
 			this->panel1->TabIndex = 5;
 			// 
 			// btnPensum
@@ -129,23 +135,26 @@ namespace SistemaAcademico {
 			this->btnPensum->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->btnPensum->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->btnPensum->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnPensum->Location = System::Drawing::Point(-1, 78);
+			this->btnPensum->Location = System::Drawing::Point(-1, 96);
+			this->btnPensum->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnPensum->Name = L"btnPensum";
-			this->btnPensum->Size = System::Drawing::Size(138, 32);
+			this->btnPensum->Size = System::Drawing::Size(184, 39);
 			this->btnPensum->TabIndex = 6;
 			this->btnPensum->Text = L"Ver Pensum";
 			this->btnPensum->UseVisualStyleBackColor = false;
+			this->btnPensum->Click += gcnew System::EventHandler(this, &MainEstudiantes::btnPensum_Click);
 			// 
 			// MainEstudiantes
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(701, 509);
+			this->ClientSize = System::Drawing::Size(935, 626);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->lblRol);
 			this->Controls->Add(this->lblNombre);
 			this->Controls->Add(this->lblCarrera);
 			this->Controls->Add(this->lblMatricula);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MainEstudiantes";
 			this->Text = L"MainEstudiantes";
 			this->panel1->ResumeLayout(false);
@@ -159,7 +168,12 @@ namespace SistemaAcademico {
 		}
 	}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void btnPensum_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		Pensum^ pensum = gcnew Pensum();
+		this->Close();
+
+		pensum->Show();
 	}
-	};
+};
 }

@@ -25,4 +25,21 @@ namespace Entities {
 	std::string Estudiantes::Getrol() const{
 		return rol;
 	}
+
+	Pensum::Pensum() : nombre_carrera(""), codigo_materia(""), nombre_materia(""), creditos("") {}
+	Pensum::Pensum(const std::string& nombre_carrera, const std::string& codigo_materia, const std::string& nombre_materia, const std::string& creditos)
+		: nombre_carrera(nombre_carrera), codigo_materia(codigo_materia), nombre_materia(nombre_materia), creditos(creditos) {}
+
+	std::string Pensum::Getnombrecarrera() const {
+		return nombre_carrera;
+	}
+	std::string Pensum::Getcodigomateria() const {
+		return codigo_materia;
+	}
+	std::string Pensum::Getnombremateria() const {
+		return nombre_materia;
+	}
+	std::string Pensum::Getcreditos() const {
+		return creditos;
+	}
 }

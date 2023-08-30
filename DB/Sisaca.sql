@@ -441,12 +441,13 @@ where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
 end$$
 
 DELIMITER $$
-Create procedure SP_GetPensum(IN SPcodigo_materia char(7))
+Create procedure SP_GetPensum(IN SPcodigo_carrera char(7))
 begin
 select TblCarreras.nombre_carrera,TblMaterias.codigo_materia,TblMaterias.nombre_materia,TblMaterias.creditos
 from ((TblMateriasEnCarrera
 inner join TblCarreras on TblMateriasEnCarrera.codigo_carrera = TblCarreras.codigo_carrera)
 inner join TblMaterias on TblMateriasEnCarrera.codigo_materia = TblMaterias.codigo_materia)
-where TblMateriasEnCarrera.codigo_carrera = SPcodigo_materia;
+where TblMateriasEnCarrera.codigo_carrera = SPcodigo_carrera;
 end$$
 
+call SP_GetPensum("IDS")

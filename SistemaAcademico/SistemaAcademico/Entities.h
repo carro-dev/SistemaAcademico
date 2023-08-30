@@ -21,5 +21,22 @@ namespace Entities {
 		std::string Getrol() const;
 
 	};
+	class Pensum {
+	private:
+		std::string nombre_carrera;
+		std::string codigo_materia;
+		std::string nombre_materia;
+		std::string creditos;
+		
+	public:
+		Pensum();
+		Pensum(const std::string& nombre_carrera, const std::string& codigo_materia, const std::string& nombre_materia, const std::string& creditos);
+		
+		std::string Getnombrecarrera() const;
+		std::string Getcodigomateria() const;
+		std::string Getnombremateria() const;
+		std::string Getcreditos() const;
+
+	};
 }
 
