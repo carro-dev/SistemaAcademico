@@ -440,6 +440,5 @@ inner join TblCarreras on TblCarreras.codigo_carrera = TblEstudiantes.codigo_car
 ) where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
 end$$
 
-call SP_GetUser("1090096","test1");
 
 
