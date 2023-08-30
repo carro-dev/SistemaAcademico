@@ -24,7 +24,7 @@
     <ClCompile Include="MainEstudiantes.cpp">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClCompile>
-    <ClCompile Include="Conexion.cpp">
+    <ClCompile Include="DataHandler.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClInclude Include="MainEstudiantes.h">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClInclude>
-    <ClInclude Include="Conexion.h">
+    <ClInclude Include="DataHandler.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
