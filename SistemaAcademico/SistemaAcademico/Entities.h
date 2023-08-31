@@ -5,6 +5,7 @@ namespace Entities {
 	class Estudiantes {
 	private:
 		std::string matricula;
+		std::string codigo_carrera;
 		std::string carrera;
 		std::string nombre;
 		std::string apellido;
@@ -12,15 +13,17 @@ namespace Entities {
 
 	public:
 		Estudiantes();
-		Estudiantes(const std::string& matricula, const std::string& carrera, const std::string& nombre, const std::string& apellido, const std::string& rol);
+		Estudiantes(const std::string& matricula, const std::string& codigo_carrera, const std::string& carrera, const std::string& nombre, const std::string& apellido, const std::string& rol);
 
 		std::string Getmatricula() const;
+		std::string Getcodigocarrera() const;
 		std::string Getcarrera() const;
 		std::string Getnombre() const;
 		std::string Getapellido() const;
 		std::string Getrol() const;
 
 	};
+
 	class Pensum {
 	private:
 		std::string nombre_carrera;

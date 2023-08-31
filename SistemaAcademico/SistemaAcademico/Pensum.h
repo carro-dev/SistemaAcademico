@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 namespace SistemaAcademico {
 
@@ -15,7 +16,7 @@ namespace SistemaAcademico {
 	public ref class Pensum : public System::Windows::Forms::Form
 	{
 	public:
-		Pensum(void)
+		Pensum(std::string codigo_carrea)
 		{
 			InitializeComponent();
 			//
@@ -67,9 +68,10 @@ namespace SistemaAcademico {
 			this->btnPensum->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->btnPensum->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->btnPensum->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnPensum->Location = System::Drawing::Point(-1, 78);
+			this->btnPensum->Location = System::Drawing::Point(-2, 120);
+			this->btnPensum->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->btnPensum->Name = L"btnPensum";
-			this->btnPensum->Size = System::Drawing::Size(138, 32);
+			this->btnPensum->Size = System::Drawing::Size(207, 49);
 			this->btnPensum->TabIndex = 6;
 			this->btnPensum->Text = L"Ver Pensum";
 			this->btnPensum->UseVisualStyleBackColor = false;
@@ -78,36 +80,42 @@ namespace SistemaAcademico {
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->panel1->Controls->Add(this->btnPensum);
-			this->panel1->Location = System::Drawing::Point(1, 0);
+			this->panel1->Location = System::Drawing::Point(2, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(137, 511);
+			this->panel1->Size = System::Drawing::Size(206, 786);
 			this->panel1->TabIndex = 6;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(160, 191);
+			this->dataGridView1->Location = System::Drawing::Point(240, 294);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(520, 306);
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->Size = System::Drawing::Size(780, 471);
 			this->dataGridView1->TabIndex = 7;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Pensum::dataGridView1_CellContentClick);
 			// 
 			// lblCarrera
 			// 
 			this->lblCarrera->AutoSize = true;
-			this->lblCarrera->Location = System::Drawing::Point(166, 40);
+			this->lblCarrera->Location = System::Drawing::Point(249, 62);
+			this->lblCarrera->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblCarrera->Name = L"lblCarrera";
-			this->lblCarrera->Size = System::Drawing::Size(41, 13);
+			this->lblCarrera->Size = System::Drawing::Size(62, 20);
 			this->lblCarrera->TabIndex = 8;
 			this->lblCarrera->Text = L"Carrera";
 			// 
 			// Pensum
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(701, 509);
+			this->ClientSize = System::Drawing::Size(1052, 783);
 			this->Controls->Add(this->lblCarrera);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel1);
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"Pensum";
 			this->Text = L"Pensum";
 			this->panel1->ResumeLayout(false);
@@ -117,5 +125,7 @@ namespace SistemaAcademico {
 
 		}
 #pragma endregion
-	};
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
+};
 }

@@ -17,6 +17,7 @@ namespace SistemaAcademico {
 	/// </summary>
 	public ref class MainEstudiantes : public System::Windows::Forms::Form
 	{
+		
 	public:
 		MainEstudiantes(Estudiantes estudiantes)
 		{
@@ -25,9 +26,10 @@ namespace SistemaAcademico {
 			//TODO: agregar código de constructor aquí
 			//
 			lblMatricula->Text = gcnew String(estudiantes.Getmatricula().c_str());
-			lblCarrera->Text = gcnew String(estudiantes.Getcarrera().c_str());
+			lblCarrera->Text = gcnew String(estudiantes.Getcodigocarrera().c_str()) + " - " + gcnew String(estudiantes.Getcarrera().c_str());
 			lblNombre->Text = gcnew String(estudiantes.Getnombre().c_str()) + " " + gcnew String(estudiantes.Getapellido().c_str());
 			lblRol->Text = gcnew String(estudiantes.Getrol().c_str());
+			std::string codigo_carrera = estudiantes.Getcodigocarrera();
 
 		}
 
@@ -162,18 +164,15 @@ namespace SistemaAcademico {
 			this->PerformLayout();
 
 		}
-	private: System::Void MainEstudiantes_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-		if (Application::OpenForms->Count == 1) {
-			Application::Exit();
-		}
-	}
+	
 #pragma endregion
 	private: System::Void btnPensum_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-		Pensum^ pensum = gcnew Pensum();
-		this->Close();
+		//std::string codigo_carrea;
+		//Pensum^ pensum = gcnew Pensum(codigo_carrea);
+		//this->Close();
 
-		pensum->Show();
+		//pensum->Show();
 	}
 };
 }

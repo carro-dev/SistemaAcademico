@@ -427,12 +427,11 @@ begin
 delete from TblMateriasEnCarrera where codigo_carrera = SPcodiga_carrera and codigo_materia = SPcodigo_materia;
 end$$
 
-
 -- View or SP_Select --
 DELIMITER $$
 Create procedure SP_GetUser(IN SPmatricula char(7),IN SPclave varchar(64))
 begin
-select TblEstudiantes.matricula,TblCarreras.nombre_carrera,TblEstudiantes.nombre_estudiante,TblEstudiantes.apellido_estudiante,
+select TblEstudiantes.matricula,TblCarreras.codigo_carrera,TblCarreras.nombre_carrera,TblEstudiantes.nombre_estudiante,TblEstudiantes.apellido_estudiante,
 TblRoles.rol from (((TblUsuarios
 inner join TblEstudiantes on TblUsuarios.id_usuario = TblEstudiantes.id_usuario)
 inner join TblRoles on TblUsuarios.id_rol = TblRoles.id_rol)
