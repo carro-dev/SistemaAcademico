@@ -16,7 +16,7 @@ namespace SistemaAcademico {
 	public ref class Pensum : public System::Windows::Forms::Form
 	{
 	public:
-		Pensum(std::string codigo_carrea)
+		Pensum(String^ codigo_carrea)
 		{
 			InitializeComponent();
 			//
