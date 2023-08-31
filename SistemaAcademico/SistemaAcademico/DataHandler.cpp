@@ -74,7 +74,7 @@ namespace DataMySql {
         MYSQL* conn = getDBConnection();
         MYSQL_RES* res;
         MYSQL_ROW row;
-
+        list<Pensum> pensum = 
 
         std::string query = "call SP_GetPensum('"+ codigoMateria +"')";
         if (mysql_query(conn, query.c_str()) != 0) {
