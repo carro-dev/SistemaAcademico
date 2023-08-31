@@ -1,4 +1,5 @@
   SistemaAcademico.Login.resources - Embedded, ContainedInManifestFile, 
+  SistemaAcademico.MainAdmin.resources - Embedded, ContainedInManifestFile, 
   SistemaAcademico.MainEstudiantes.resources - Embedded, ContainedInManifestFile, 
   SistemaAcademico.Pensum.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -23,5 +24,8 @@ Class SistemaAcademico.MainEstudiantes: AutoLayout, AnsiClass, Class, Public, Be
   :System.Windows.Forms.Form
     Void .ctor(Entities.Estudiantes*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SistemaAcademico.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SistemaAcademico.MainAdmin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

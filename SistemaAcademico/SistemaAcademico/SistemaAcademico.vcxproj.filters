@@ -33,6 +33,9 @@
     <ClCompile Include="Pensum.cpp">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClCompile>
+    <ClCompile Include="MainAdmin.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -49,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="Pensum.h">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
+    </ClInclude>
+    <ClInclude Include="MainAdmin.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

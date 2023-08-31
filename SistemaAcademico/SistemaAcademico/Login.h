@@ -52,6 +52,7 @@ namespace SistemaAcademico {
 	private: System::Windows::Forms::Button^ btnLogin;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 
 	protected:
 
@@ -73,57 +74,82 @@ namespace SistemaAcademico {
 			this->btnLogin = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// txtMatricula
 			// 
-			this->txtMatricula->Location = System::Drawing::Point(82, 75);
+			this->txtMatricula->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtMatricula->Location = System::Drawing::Point(131, 110);
 			this->txtMatricula->Name = L"txtMatricula";
-			this->txtMatricula->Size = System::Drawing::Size(127, 20);
+			this->txtMatricula->Size = System::Drawing::Size(192, 20);
 			this->txtMatricula->TabIndex = 0;
 			// 
 			// txtPassw
 			// 
-			this->txtPassw->Location = System::Drawing::Point(82, 133);
+			this->txtPassw->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtPassw->Location = System::Drawing::Point(131, 144);
 			this->txtPassw->Name = L"txtPassw";
 			this->txtPassw->PasswordChar = '*';
-			this->txtPassw->Size = System::Drawing::Size(127, 20);
+			this->txtPassw->Size = System::Drawing::Size(192, 20);
 			this->txtPassw->TabIndex = 1;
 			this->txtPassw->UseSystemPasswordChar = true;
 			// 
 			// btnLogin
 			// 
-			this->btnLogin->Location = System::Drawing::Point(101, 175);
+			this->btnLogin->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->btnLogin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnLogin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnLogin->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnLogin->Location = System::Drawing::Point(49, 203);
 			this->btnLogin->Name = L"btnLogin";
-			this->btnLogin->Size = System::Drawing::Size(75, 23);
+			this->btnLogin->Size = System::Drawing::Size(113, 32);
 			this->btnLogin->TabIndex = 2;
 			this->btnLogin->Text = L"Login";
-			this->btnLogin->UseVisualStyleBackColor = true;
+			this->btnLogin->UseVisualStyleBackColor = false;
 			this->btnLogin->Click += gcnew System::EventHandler(this, &Login::btnLogin_Click);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(115, 49);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(46, 110);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(50, 13);
+			this->label1->Size = System::Drawing::Size(61, 16);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Matricula";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(115, 117);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(46, 147);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(61, 13);
+			this->label2->Size = System::Drawing::Size(76, 16);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Contraseña";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::SteelBlue;
+			this->label3->Location = System::Drawing::Point(44, 51);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(155, 25);
+			this->label3->TabIndex = 5;
+			this->label3->Text = L"Iniciar Sesion";
 			// 
 			// Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(299, 247);
+			this->ClientSize = System::Drawing::Size(396, 282);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnLogin);
