@@ -1,3 +1,10 @@
-﻿  Login.cpp
-  DataHandler.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  SistemaAcademico.vcxproj -> C:\Users\Aliany González\Documents\GitHub\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.exe
+﻿  DataHandler.cpp
+  Entities.cpp
+  Login.cpp
+  MainAdmin.cpp
+  MainEstudiantes.cpp
+  Pensum.cpp
+  .NETFramework,Version=v4.8.AssemblyAttributes.cpp
+  Generando código...
+  DataHandler.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SistemaAcademico.vcxproj -> C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.exe

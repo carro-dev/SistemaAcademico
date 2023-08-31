@@ -1,6 +1,4 @@
 #MySQL
-libmysql.lib
-mysqlcppconn.lib
 
 # Prerequisites
 *.d
@@ -18,7 +16,6 @@ mysqlcppconn.lib
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
@@ -28,7 +25,6 @@ mysqlcppconn.lib
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
@@ -38,4 +34,14 @@ mysqlcppconn.lib
 #Visual C++ cache files
 *.opendb
 *.opensdf
-
+*.icph
+*.tlog
+*.db
+*.dn-shm
+*.lock
+*.suo
+*.metagen
+*.pdb
+*.cache
+*.vsidx
+*.log

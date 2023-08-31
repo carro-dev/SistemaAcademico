@@ -3,7 +3,7 @@
 #include <iostream>
 #include <mysql.h>
 #include "Entities.h"
-
+#include <list>
 
 using namespace System::Windows::Forms;
 using namespace Entities;
@@ -70,7 +70,7 @@ namespace DataMySql {
 
 	}
 
-    Pensum DataHandler::getPensum(const std::string& codigoMateria) {
+    list<Pensum> DataHandler::getPensum(const std::string& codigoMateria) {
         MYSQL* conn = getDBConnection();
         MYSQL_RES* res;
         MYSQL_ROW row;
