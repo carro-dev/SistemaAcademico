@@ -105,9 +105,10 @@ namespace SistemaAcademico {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label1->Location = System::Drawing::Point(23, 66);
+			this->label1->Location = System::Drawing::Point(31, 81);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(103, 25);
+			this->label1->Size = System::Drawing::Size(126, 31);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Materias";
 			this->label1->Click += gcnew System::EventHandler(this, &MainAdmin::label1_Click);
@@ -115,9 +116,10 @@ namespace SistemaAcademico {
 			// linkLabel1
 			// 
 			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(25, 111);
+			this->linkLabel1->Location = System::Drawing::Point(33, 137);
+			this->linkLabel1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(44, 13);
+			this->linkLabel1->Size = System::Drawing::Size(56, 16);
 			this->linkLabel1->TabIndex = 2;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"Agregar";
@@ -125,9 +127,10 @@ namespace SistemaAcademico {
 			// linkLabel2
 			// 
 			this->linkLabel2->AutoSize = true;
-			this->linkLabel2->Location = System::Drawing::Point(92, 111);
+			this->linkLabel2->Location = System::Drawing::Point(123, 137);
+			this->linkLabel2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->linkLabel2->Name = L"linkLabel2";
-			this->linkLabel2->Size = System::Drawing::Size(34, 13);
+			this->linkLabel2->Size = System::Drawing::Size(42, 16);
 			this->linkLabel2->TabIndex = 3;
 			this->linkLabel2->TabStop = true;
 			this->linkLabel2->Text = L"Editar";
@@ -137,18 +140,20 @@ namespace SistemaAcademico {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(25, 157);
+			this->label2->Location = System::Drawing::Point(33, 193);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(121, 16);
+			this->label2->Size = System::Drawing::Size(150, 20);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Codigo de Materia:";
 			// 
 			// txtcodigomat
 			// 
 			this->txtcodigomat->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtcodigomat->Location = System::Drawing::Point(157, 157);
+			this->txtcodigomat->Location = System::Drawing::Point(209, 193);
+			this->txtcodigomat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->txtcodigomat->Name = L"txtcodigomat";
-			this->txtcodigomat->Size = System::Drawing::Size(105, 20);
+			this->txtcodigomat->Size = System::Drawing::Size(139, 22);
 			this->txtcodigomat->TabIndex = 5;
 			// 
 			// label3
@@ -156,9 +161,10 @@ namespace SistemaAcademico {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(25, 194);
+			this->label3->Location = System::Drawing::Point(33, 239);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(126, 16);
+			this->label3->Size = System::Drawing::Size(157, 20);
 			this->label3->TabIndex = 6;
 			this->label3->Text = L"Nombre de Materia:";
 			this->label3->Click += gcnew System::EventHandler(this, &MainAdmin::label3_Click);
@@ -166,9 +172,10 @@ namespace SistemaAcademico {
 			// txtnommat
 			// 
 			this->txtnommat->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtnommat->Location = System::Drawing::Point(157, 194);
+			this->txtnommat->Location = System::Drawing::Point(209, 239);
+			this->txtnommat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->txtnommat->Name = L"txtnommat";
-			this->txtnommat->Size = System::Drawing::Size(294, 20);
+			this->txtnommat->Size = System::Drawing::Size(391, 22);
 			this->txtnommat->TabIndex = 7;
 			// 
 			// label4
@@ -176,18 +183,20 @@ namespace SistemaAcademico {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(24, 232);
+			this->label4->Location = System::Drawing::Point(32, 286);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(102, 16);
+			this->label4->Size = System::Drawing::Size(125, 20);
 			this->label4->TabIndex = 8;
 			this->label4->Text = L"Tipo de Materia";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(157, 231);
+			this->comboBox1->Location = System::Drawing::Point(209, 284);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(166, 21);
+			this->comboBox1->Size = System::Drawing::Size(220, 24);
 			this->comboBox1->TabIndex = 9;
 			// 
 			// label5
@@ -195,18 +204,20 @@ namespace SistemaAcademico {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(25, 355);
+			this->label5->Location = System::Drawing::Point(33, 437);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(111, 16);
+			this->label5->Size = System::Drawing::Size(139, 20);
 			this->label5->TabIndex = 10;
 			this->label5->Text = L"Valor de Creditos";
 			// 
 			// txtcreditos
 			// 
 			this->txtcreditos->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->txtcreditos->Location = System::Drawing::Point(157, 355);
+			this->txtcreditos->Location = System::Drawing::Point(209, 437);
+			this->txtcreditos->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->txtcreditos->Name = L"txtcreditos";
-			this->txtcreditos->Size = System::Drawing::Size(105, 20);
+			this->txtcreditos->Size = System::Drawing::Size(139, 22);
 			this->txtcreditos->TabIndex = 11;
 			// 
 			// label6
@@ -214,9 +225,10 @@ namespace SistemaAcademico {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(24, 267);
+			this->label6->Location = System::Drawing::Point(32, 329);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(111, 32);
+			this->label6->Size = System::Drawing::Size(137, 40);
 			this->label6->TabIndex = 12;
 			this->label6->Text = L"Area Academica \r\nde Materia";
 			this->label6->Click += gcnew System::EventHandler(this, &MainAdmin::label6_Click);
@@ -224,9 +236,10 @@ namespace SistemaAcademico {
 			// cmbArea
 			// 
 			this->cmbArea->FormattingEnabled = true;
-			this->cmbArea->Location = System::Drawing::Point(157, 267);
+			this->cmbArea->Location = System::Drawing::Point(209, 329);
+			this->cmbArea->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cmbArea->Name = L"cmbArea";
-			this->cmbArea->Size = System::Drawing::Size(223, 21);
+			this->cmbArea->Size = System::Drawing::Size(296, 24);
 			this->cmbArea->TabIndex = 13;
 			// 
 			// label7
@@ -234,18 +247,20 @@ namespace SistemaAcademico {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(24, 312);
+			this->label7->Location = System::Drawing::Point(32, 384);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(119, 16);
+			this->label7->Size = System::Drawing::Size(150, 20);
 			this->label7->TabIndex = 14;
 			this->label7->Text = L"Carrera de Materia";
 			// 
 			// cmbcarrera
 			// 
 			this->cmbcarrera->FormattingEnabled = true;
-			this->cmbcarrera->Location = System::Drawing::Point(157, 311);
+			this->cmbcarrera->Location = System::Drawing::Point(209, 383);
+			this->cmbcarrera->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cmbcarrera->Name = L"cmbcarrera";
-			this->cmbcarrera->Size = System::Drawing::Size(223, 21);
+			this->cmbcarrera->Size = System::Drawing::Size(296, 24);
 			this->cmbcarrera->TabIndex = 15;
 			this->cmbcarrera->Visible = false;
 			// 
@@ -256,12 +271,14 @@ namespace SistemaAcademico {
 			this->btnadd->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->btnadd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnadd->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btnadd->Location = System::Drawing::Point(28, 414);
+			this->btnadd->Location = System::Drawing::Point(37, 510);
+			this->btnadd->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnadd->Name = L"btnadd";
-			this->btnadd->Size = System::Drawing::Size(98, 32);
+			this->btnadd->Size = System::Drawing::Size(131, 39);
 			this->btnadd->TabIndex = 8;
 			this->btnadd->Text = L"Agregar";
 			this->btnadd->UseVisualStyleBackColor = false;
+			this->btnadd->Click += gcnew System::EventHandler(this, &MainAdmin::btnadd_Click);
 			// 
 			// btnsec
 			// 
@@ -272,9 +289,10 @@ namespace SistemaAcademico {
 			this->btnsec->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnsec->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btnsec->Location = System::Drawing::Point(144, 0);
+			this->btnsec->Location = System::Drawing::Point(192, 0);
+			this->btnsec->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnsec->Name = L"btnsec";
-			this->btnsec->Size = System::Drawing::Size(138, 45);
+			this->btnsec->Size = System::Drawing::Size(184, 55);
 			this->btnsec->TabIndex = 7;
 			this->btnsec->Text = L"Secciones";
 			this->btnsec->UseVisualStyleBackColor = false;
@@ -289,8 +307,9 @@ namespace SistemaAcademico {
 				static_cast<System::Byte>(0)));
 			this->btnmat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnmat->Location = System::Drawing::Point(0, 0);
+			this->btnmat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnmat->Name = L"btnmat";
-			this->btnmat->Size = System::Drawing::Size(138, 45);
+			this->btnmat->Size = System::Drawing::Size(184, 55);
 			this->btnmat->TabIndex = 8;
 			this->btnmat->Text = L"Materias";
 			this->btnmat->UseVisualStyleBackColor = false;
@@ -301,15 +320,16 @@ namespace SistemaAcademico {
 			this->panel1->Controls->Add(this->btnsec);
 			this->panel1->Controls->Add(this->btnmat);
 			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(701, 45);
+			this->panel1->Size = System::Drawing::Size(935, 55);
 			this->panel1->TabIndex = 0;
 			// 
 			// MainAdmin
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(701, 509);
+			this->ClientSize = System::Drawing::Size(935, 626);
 			this->Controls->Add(this->btnadd);
 			this->Controls->Add(this->cmbcarrera);
 			this->Controls->Add(this->label7);
@@ -327,6 +347,7 @@ namespace SistemaAcademico {
 			this->Controls->Add(this->linkLabel1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MainAdmin";
 			this->Text = L"MainAdmin";
 			this->Load += gcnew System::EventHandler(this, &MainAdmin::MainAdmin_Load);
@@ -345,6 +366,9 @@ namespace SistemaAcademico {
 private: System::Void MainAdmin_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void btnadd_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 }
 };
 }

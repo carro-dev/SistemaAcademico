@@ -21,7 +21,7 @@
     <ClCompile Include="Login.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="MainEstudiantes.cpp">
+    <ClCompile Include="ViewEstudiantes.cpp">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClCompile>
     <ClCompile Include="DataHandler.cpp">
@@ -41,7 +41,7 @@
     <ClInclude Include="Login.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="MainEstudiantes.h">
+    <ClInclude Include="ViewEstudiantes.h">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClInclude>
     <ClInclude Include="DataHandler.h">

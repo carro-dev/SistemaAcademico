@@ -126,7 +126,7 @@
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainAdmin.cpp" />
-    <ClCompile Include="MainEstudiantes.cpp" />
+    <ClCompile Include="ViewEstudiantes.cpp" />
     <ClCompile Include="Pensum.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +138,7 @@
     <ClInclude Include="MainAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MainEstudiantes.h">
+    <ClInclude Include="ViewEstudiantes.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Pensum.h">
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="MainAdmin.resx">
       <DependentUpon>MainAdmin.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainEstudiantes.resx">
-      <DependentUpon>MainEstudiantes.h</DependentUpon>
+    <EmbeddedResource Include="ViewEstudiantes.resx">
+      <DependentUpon>ViewEstudiantes.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pensum.resx">
       <DependentUpon>Pensum.h</DependentUpon>

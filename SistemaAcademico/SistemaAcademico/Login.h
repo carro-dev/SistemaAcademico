@@ -2,7 +2,7 @@
 #include <msclr/marshal_cppstd.h>
 #include "DataHandler.h"
 #include "Entities.h"
-#include "MainEstudiantes.h"
+#include "ViewEstudiantes.h"
 
 namespace SistemaAcademico {
 
@@ -172,7 +172,7 @@ namespace SistemaAcademico {
 
 		
 		if (estudiante->Matricula != "") {
-			MainEstudiantes^ mainestudiantes = gcnew MainEstudiantes(estudiante);
+			ViewEstudiantes^ mainestudiantes = gcnew MainEstudiantes(estudiante);
 			mainestudiantes->Show();
 			this->Hide();
 	
