@@ -11,6 +11,5 @@ C:\Users\Aliany González\Documents\GitHub\SistemaAcademico\SistemaAcademico\Sis
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.AssemblyReference.cache
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.Login.resources
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.MainAdmin.resources
-C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.MainEstudiantes.resources
-C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.Pensum.resources
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.ViewEstudiantes.resources
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.GenerateResource.cache

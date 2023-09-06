@@ -21,28 +21,22 @@
     <ClCompile Include="Login.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="ViewEstudiantes.cpp">
-      <Filter>Archivos de encabezado\Estudiantes</Filter>
-    </ClCompile>
     <ClCompile Include="DataHandler.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Entities.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Pensum.cpp">
-      <Filter>Archivos de encabezado\Estudiantes</Filter>
-    </ClCompile>
     <ClCompile Include="MainAdmin.cpp">
       <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewEstudiantes.cpp">
+      <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
       <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="ViewEstudiantes.h">
-      <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClInclude>
     <ClInclude Include="DataHandler.h">
       <Filter>Archivos de encabezado</Filter>
@@ -50,11 +44,11 @@
     <ClInclude Include="Entities.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Pensum.h">
-      <Filter>Archivos de encabezado\Estudiantes</Filter>
-    </ClInclude>
     <ClInclude Include="MainAdmin.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewEstudiantes.h">
+      <Filter>Archivos de encabezado\Estudiantes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

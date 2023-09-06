@@ -172,7 +172,7 @@ namespace SistemaAcademico {
 
 		
 		if (estudiante->Matricula != "") {
-			ViewEstudiantes^ mainestudiantes = gcnew MainEstudiantes(estudiante);
+			ViewEstudiantes^ mainestudiantes = gcnew ViewEstudiantes(estudiante);
 			mainestudiantes->Show();
 			this->Hide();
 	
