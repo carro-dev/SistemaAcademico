@@ -3,10 +3,11 @@
 #include <iostream>
 #include <mysql.h>
 #include "Entities.h"
-#include <list>
+#include <vector>
 
 using namespace System::Windows::Forms;
 using namespace Entities;
+using namespace std;
 
 namespace DataMySql {
 
@@ -25,92 +26,87 @@ namespace DataMySql {
         return conectar;
 	}
 
-	Estudiantes DataHandler::login(const std::string& username,const std::string& password){
+	Estudiantes^ DataHandler::login(const std::string& username,const std::string& password){
         MYSQL* conn = getDBConnection();
         MYSQL_RES* res;
         MYSQL_ROW row;
+        
+        Estudiantes^ estudiante = gcnew Estudiantes();
 
 
         std::string query = "call SP_GetUser('"+username+"','"+password+"')";
         if (mysql_query(conn, query.c_str()) != 0) {
             mysql_close(conn);
-            return Estudiantes(); // Error en la consulta
+            return estudiante; // Error en la consulta
         }
 
         res = mysql_store_result(conn);
         if (res == NULL) {
             mysql_close(conn);
-            return Estudiantes(); // Error al obtener el resultado de la consulta
+            return estudiante; // Error al obtener el resultado de la consulta
         }
 
         row = mysql_fetch_row(res);
         if (row != NULL) {
-            std::string matricula = row[0];
-            std::string codigocarrera = row[1];
-            std::string carrera = row[2];
-            std::string nombre = row[3];
-            std::string apellido = row[4];
-            std::string rol = row[5];
+            System::String^ matricula = gcnew  System::String(row[0]);
+            System::String^ codigocarrera = gcnew  System::String(row[1]);
+            System::String^ carrera = gcnew  System::String(row[2]);
+            System::String^ nombre = gcnew  System::String(row[3]);
+            System::String^ apellido = gcnew  System::String(row[4]);
+            System::String^ rol = gcnew  System::String(row[5]);
 
             // Asignar los datos obtenidos al objeto User
-            Estudiantes estudiantes(matricula, codigocarrera, carrera, nombre, apellido, rol);
+            estudiante = gcnew Estudiantes(matricula, codigocarrera, carrera, nombre, apellido, rol);
 
             mysql_free_result(res);
             mysql_close(conn);
 
-            return estudiantes;
+            return estudiante;
         }
         else {
             // No se encontró el usuario con las credenciales proporcionadas
             mysql_free_result(res);
             mysql_close(conn);
 
-            return Estudiantes();
+            return estudiante;
         }
 
 	}
 
-    list<Pensum> DataHandler::getPensum(const std::string& codigoMateria) {
+    vector<Pensum> DataHandler::getPensum(const std::string& codigoCarrera) {
         MYSQL* conn = getDBConnection();
         MYSQL_RES* res;
         MYSQL_ROW row;
-        list<Pensum> pensum = 
+        std::vector<Pensum> pensums;
 
-        std::string query = "call SP_GetPensum('"+ codigoMateria +"')";
+        std::string query = "call SP_GetPensum('"+ codigoCarrera +"')";
         if (mysql_query(conn, query.c_str()) != 0) {
             mysql_close(conn);
-            return Pensum(); // Error en la consulta
+            return pensums; // Error en la consulta
         }
 
         res = mysql_store_result(conn);
         if (res == NULL) {
             mysql_close(conn);
-            return Pensum(); // Error al obtener el resultado de la consulta
+            return pensums; // Error al obtener el resultado de la consulta
         }
 
-        row = mysql_fetch_row(res);
-        if (row != NULL) {
+        while ((row = mysql_fetch_row(res)) != nullptr) {
+  
             std::string nombre_carrera = row[0];
             std::string codigo_materia = row[1];
             std::string nombre_materia = row[2];
             std::string creditos = row[3];
 
+            Pensum pensum(nombre_carrera, codigo_materia, nombre_materia, creditos);
 
-            // Asignar los datos obtenidos al objeto User
-            Pensum pensum(nombre_carrera,codigo_materia,nombre_materia,creditos);
-
-            mysql_free_result(res);
-            mysql_close(conn);
-
-            return pensum;
-        }
-        else {
-            // No se encontró el usuario con las credenciales proporcionadas
-            mysql_free_result(res);
-            mysql_close(conn);
-
-            return Pensum();
+            pensums.push_back(pensum);
         }
 
+        mysql_free_result(res);
+        mysql_close(conn);
+
+        return pensums;
+      
     }
 }

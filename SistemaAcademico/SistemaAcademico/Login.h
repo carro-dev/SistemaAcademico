@@ -1,5 +1,4 @@
 #pragma once
-#include <mysql.h>
 #include <msclr/marshal_cppstd.h>
 #include "DataHandler.h"
 #include "Entities.h"
@@ -7,7 +6,7 @@
 
 namespace SistemaAcademico {
 
-	using namespace System;
+	//using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -164,11 +163,15 @@ namespace SistemaAcademico {
 #pragma endregion
 	private: System::Void btnLogin_Click(System::Object^ sender, System::EventArgs^ e) {
 
+		//Convertir data del Textbox a las variables
 		std::string username = msclr::interop::marshal_as<std::string>(txtMatricula->Text);
 		std::string password = msclr::interop::marshal_as<std::string>(txtPassw->Text);
 
-		Estudiantes estudiante = DataHandler::login(username, password);
-		if (estudiante.Getmatricula() != "") {
+		//Se hace llamado a la funcion Login de DataHandler
+		Estudiantes^ estudiante = DataHandler::login(username, password);
+
+		
+		if (estudiante->Matricula != "") {
 			MainEstudiantes^ mainestudiantes = gcnew MainEstudiantes(estudiante);
 			mainestudiantes->Show();
 			this->Hide();

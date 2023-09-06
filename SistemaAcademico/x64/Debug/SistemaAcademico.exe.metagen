@@ -3,7 +3,7 @@
   SistemaAcademico.MainEstudiantes.resources - Embedded, ContainedInManifestFile, 
   SistemaAcademico.Pensum.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
-Assembly SistemaAcademico, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+Assembly SistemaAcademico, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -17,12 +17,29 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class Entities.Estudiantes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Rol 'get ' : 
+    System.String Apellido 'get ' : 
+    System.String Nombre 'get ' : 
+    System.String Carrera 'get ' : 
+    System.String CodigoCarrera 'get ' : 
+    System.String Matricula 'get ' : 
+  Methods:
+    get_Matricula(): PrivateScope, Public, HideBySig, SpecialName
+    get_CodigoCarrera(): PrivateScope, Public, HideBySig, SpecialName
+    get_Carrera(): PrivateScope, Public, HideBySig, SpecialName
+    get_Nombre(): PrivateScope, Public, HideBySig, SpecialName
+    get_Apellido(): PrivateScope, Public, HideBySig, SpecialName
+    get_Rol(): PrivateScope, Public, HideBySig, SpecialName
 Class SistemaAcademico.Pensum: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Entities.Estudiantes): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SistemaAcademico.MainEstudiantes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(Entities.Estudiantes*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Entities.Estudiantes): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SistemaAcademico.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

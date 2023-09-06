@@ -1,26 +1,58 @@
 #pragma once
 #include <string>
 
+//using namespace System;
+//using namespace System::Runtime::InteropServices;
+
 namespace Entities {
-	class Estudiantes {
-	private:
-		std::string matricula;
-		std::string codigo_carrera;
-		std::string carrera;
-		std::string nombre;
-		std::string apellido;
-		std::string rol;
+	public ref class Estudiantes {
+    private:
+        System::String^ matricula;
+        System::String^ codigo_carrera;
+        System::String^ carrera;
+        System::String^ nombre;
+        System::String^ apellido;
+        System::String^ rol;
 
-	public:
-		Estudiantes();
-		Estudiantes(const std::string& matricula, const std::string& codigo_carrera, const std::string& carrera, const std::string& nombre, const std::string& apellido, const std::string& rol);
+    public:
+        Estudiantes();
+        Estudiantes(System::String^ matricula, System::String^ codigo_carrera, System::String^ carrera, System::String^ nombre, System::String^ apellido, System::String^ rol);
 
-		std::string Getmatricula() const;
-		std::string Getcodigocarrera() const;
-		std::string Getcarrera() const;
-		std::string Getnombre() const;
-		std::string Getapellido() const;
-		std::string Getrol() const;
+        property  System::String^ Matricula {
+            System::String^ get() {
+                return gcnew  System::String(matricula);
+            }
+        }
+
+        property  System::String^ CodigoCarrera {
+            System::String^ get() {
+                return gcnew  System::String(codigo_carrera);
+            }
+        }
+
+        property  System::String^ Carrera {
+            System::String^ get() {
+                return gcnew  System::String(carrera);
+            }
+        }
+
+        property  System::String^ Nombre {
+            System::String^ get() {
+                return gcnew  System::String(nombre);
+            }
+        }
+
+        property  System::String^ Apellido {
+            System::String^ get() {
+                return gcnew  System::String(apellido);
+            }
+        }
+
+        property  System::String^ Rol {
+            System::String^ get() {
+                return gcnew  System::String(rol);
+            }
+        }
 
 	};
 

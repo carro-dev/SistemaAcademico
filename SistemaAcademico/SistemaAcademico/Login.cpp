@@ -1,9 +1,9 @@
 #include "Login.h"
 #include "DataHandler.h"
 
-using namespace System;
 using namespace System::Windows::Forms;
-int main(array<String^>^ args)
+
+int main(array< System::String^>^ args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);

@@ -1,27 +1,38 @@
 #pragma once
+#include <msclr/marshal_cppstd.h>
 #include <string>
+#include <vector>
+#include "DataHandler.h"
+
 
 namespace SistemaAcademico {
 
-	using namespace System;
+	//using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace std;
+	using namespace DataMySql;
+	using namespace Entities;
 
 	/// <summary>
 	/// Resumen de Pensum
 	/// </summary>
 	public ref class Pensum : public System::Windows::Forms::Form
 	{
+	private:
+		Estudiantes^ estInf;
 	public:
-		Pensum(String^ codigo_carrea)
+		Pensum(Estudiantes^ estudiante)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			lblCarrera->Text = estudiante->Carrera;
+			this->estInf = estudiante;
 		}
 
 	protected:
@@ -39,7 +50,10 @@ namespace SistemaAcademico {
 	protected:
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 	private: System::Windows::Forms::Label^ lblCarrera;
+
+
 
 	private:
 		/// <summary>
@@ -100,24 +114,25 @@ namespace SistemaAcademico {
 			// lblCarrera
 			// 
 			this->lblCarrera->AutoSize = true;
-			this->lblCarrera->Location = System::Drawing::Point(249, 62);
+			this->lblCarrera->Location = System::Drawing::Point(236, 69);
 			this->lblCarrera->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblCarrera->Name = L"lblCarrera";
 			this->lblCarrera->Size = System::Drawing::Size(62, 20);
-			this->lblCarrera->TabIndex = 8;
+			this->lblCarrera->TabIndex = 9;
 			this->lblCarrera->Text = L"Carrera";
 			// 
 			// Pensum
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1052, 783);
+			this->ClientSize = System::Drawing::Size(1052, 782);
 			this->Controls->Add(this->lblCarrera);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel1);
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"Pensum";
 			this->Text = L"Pensum";
+			this->Load += gcnew System::EventHandler(this, &Pensum::Pensum_Load);
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -127,5 +142,40 @@ namespace SistemaAcademico {
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
+
+	private: System::Void Pensum_Load(System::Object^ sender, System::EventArgs^ e) {
+		
+		std::string codigo = msclr::interop::marshal_as<std::string>(estInf->CodigoCarrera);
+		vector<Entities::Pensum> pensums = DataHandler::getPensum(codigo);
+
+		// Configurar las columnas del DataGridView (si aún no están configuradas)
+		if (dataGridView1->Columns->Count == 0) {
+			dataGridView1->Columns->Add("codigo_materia", "Codigo Materia");
+			dataGridView1->Columns->Add("nombre_materia", "Nombre Materia");
+			dataGridView1->Columns->Add("creditos", "Creditos");
+		}
+
+		// Llenar el DataGridView con los datos de las materias
+		for (const Entities::Pensum& pensum : pensums) {
+			DataGridViewRow^ row = gcnew DataGridViewRow();
+			
+			DataGridViewCell^ cellCodigo = gcnew DataGridViewTextBoxCell();
+			cellCodigo->Value = gcnew System::String(pensum.Getcodigomateria().c_str());
+			row->Cells->Add(cellCodigo);
+
+			DataGridViewCell^ cellNombre = gcnew DataGridViewTextBoxCell();
+			cellNombre->Value = gcnew System::String(pensum.Getcodigomateria().c_str());
+			row->Cells->Add(cellNombre);
+
+			DataGridViewCell^ cellCreditos = gcnew DataGridViewTextBoxCell();
+			cellCreditos->Value = gcnew System::String(pensum.Getcreditos().c_str());
+			row->Cells->Add(cellCreditos);
+
+			dataGridView1->Rows->Add(row);
+		}
+
+	}
+
 };
 }
+ 
