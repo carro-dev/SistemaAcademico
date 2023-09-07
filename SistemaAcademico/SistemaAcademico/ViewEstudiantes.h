@@ -1,7 +1,6 @@
 #pragma once
 #include <msclr/marshal_cppstd.h>
 #include "Entities.h"
-#include <vector>
 #include "DataHandler.h"
 
 namespace SistemaAcademico {
@@ -143,9 +142,8 @@ namespace SistemaAcademico {
 			this->panelMenu->Controls->Add(this->btninicio);
 			this->panelMenu->Controls->Add(this->btnPensum);
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
-			this->panelMenu->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(935, 55);
+			this->panelMenu->Size = System::Drawing::Size(701, 45);
 			this->panelMenu->TabIndex = 5;
 			// 
 			// btnselec
@@ -157,10 +155,9 @@ namespace SistemaAcademico {
 			this->btnselec->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnselec->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->btnselec->Location = System::Drawing::Point(384, 0);
-			this->btnselec->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnselec->Location = System::Drawing::Point(288, 0);
 			this->btnselec->Name = L"btnselec";
-			this->btnselec->Size = System::Drawing::Size(184, 55);
+			this->btnselec->Size = System::Drawing::Size(138, 45);
 			this->btnselec->TabIndex = 8;
 			this->btnselec->Text = L"Seleccion";
 			this->btnselec->UseVisualStyleBackColor = false;
@@ -175,9 +172,8 @@ namespace SistemaAcademico {
 				static_cast<System::Byte>(0)));
 			this->btninicio->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->btninicio->Location = System::Drawing::Point(0, 0);
-			this->btninicio->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btninicio->Name = L"btninicio";
-			this->btninicio->Size = System::Drawing::Size(184, 55);
+			this->btninicio->Size = System::Drawing::Size(138, 45);
 			this->btninicio->TabIndex = 7;
 			this->btninicio->Text = L"Inicio";
 			this->btninicio->UseVisualStyleBackColor = false;
@@ -192,10 +188,9 @@ namespace SistemaAcademico {
 			this->btnPensum->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnPensum->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->btnPensum->Location = System::Drawing::Point(192, 0);
-			this->btnPensum->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnPensum->Location = System::Drawing::Point(144, 0);
 			this->btnPensum->Name = L"btnPensum";
-			this->btnPensum->Size = System::Drawing::Size(184, 55);
+			this->btnPensum->Size = System::Drawing::Size(138, 45);
 			this->btnPensum->TabIndex = 6;
 			this->btnPensum->Text = L"Ver Pensum";
 			this->btnPensum->UseVisualStyleBackColor = false;
@@ -212,9 +207,8 @@ namespace SistemaAcademico {
 			this->panelMain->Controls->Add(this->lblMatricula);
 			this->panelMain->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelMain->Location = System::Drawing::Point(0, 0);
-			this->panelMain->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelMain->Name = L"panelMain";
-			this->panelMain->Size = System::Drawing::Size(935, 626);
+			this->panelMain->Size = System::Drawing::Size(701, 509);
 			this->panelMain->TabIndex = 8;
 			// 
 			// lblRol
@@ -223,10 +217,9 @@ namespace SistemaAcademico {
 			this->lblRol->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblRol->ForeColor = System::Drawing::Color::SteelBlue;
-			this->lblRol->Location = System::Drawing::Point(47, 95);
-			this->lblRol->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lblRol->Location = System::Drawing::Point(35, 77);
 			this->lblRol->Name = L"lblRol";
-			this->lblRol->Size = System::Drawing::Size(58, 31);
+			this->lblRol->Size = System::Drawing::Size(47, 25);
 			this->lblRol->TabIndex = 11;
 			this->lblRol->Text = L"Rol";
 			// 
@@ -236,10 +229,9 @@ namespace SistemaAcademico {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label1->Location = System::Drawing::Point(49, 279);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(37, 227);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(239, 25);
+			this->label1->Size = System::Drawing::Size(197, 20);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Materias seleccionadas";
 			// 
@@ -248,11 +240,10 @@ namespace SistemaAcademico {
 			this->DGVMateriasSeleccionadas->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->DGVMateriasSeleccionadas->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->DGVMateriasSeleccionadas->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->DGVMateriasSeleccionadas->Location = System::Drawing::Point(53, 327);
-			this->DGVMateriasSeleccionadas->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->DGVMateriasSeleccionadas->Location = System::Drawing::Point(40, 266);
 			this->DGVMateriasSeleccionadas->Name = L"DGVMateriasSeleccionadas";
 			this->DGVMateriasSeleccionadas->RowHeadersWidth = 51;
-			this->DGVMateriasSeleccionadas->Size = System::Drawing::Size(835, 228);
+			this->DGVMateriasSeleccionadas->Size = System::Drawing::Size(626, 185);
 			this->DGVMateriasSeleccionadas->TabIndex = 12;
 			// 
 			// lblNombre
@@ -260,10 +251,9 @@ namespace SistemaAcademico {
 			this->lblNombre->AutoSize = true;
 			this->lblNombre->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblNombre->Location = System::Drawing::Point(137, 178);
-			this->lblNombre->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lblNombre->Location = System::Drawing::Point(103, 145);
 			this->lblNombre->Name = L"lblNombre";
-			this->lblNombre->Size = System::Drawing::Size(79, 24);
+			this->lblNombre->Size = System::Drawing::Size(62, 18);
 			this->lblNombre->TabIndex = 10;
 			this->lblNombre->Text = L"Nombre";
 			// 
@@ -272,10 +262,9 @@ namespace SistemaAcademico {
 			this->lblCarrera->AutoSize = true;
 			this->lblCarrera->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->lblCarrera->Location = System::Drawing::Point(51, 145);
-			this->lblCarrera->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lblCarrera->Location = System::Drawing::Point(38, 118);
 			this->lblCarrera->Name = L"lblCarrera";
-			this->lblCarrera->Size = System::Drawing::Size(73, 20);
+			this->lblCarrera->Size = System::Drawing::Size(59, 16);
 			this->lblCarrera->TabIndex = 9;
 			this->lblCarrera->Text = L"Carrera";
 			// 
@@ -284,10 +273,9 @@ namespace SistemaAcademico {
 			this->lblMatricula->AutoSize = true;
 			this->lblMatricula->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblMatricula->Location = System::Drawing::Point(51, 178);
-			this->lblMatricula->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lblMatricula->Location = System::Drawing::Point(38, 145);
 			this->lblMatricula->Name = L"lblMatricula";
-			this->lblMatricula->Size = System::Drawing::Size(85, 24);
+			this->lblMatricula->Size = System::Drawing::Size(68, 18);
 			this->lblMatricula->TabIndex = 8;
 			this->lblMatricula->Text = L"Matricula";
 			// 
@@ -296,10 +284,9 @@ namespace SistemaAcademico {
 			this->lblCarreraP->AutoSize = true;
 			this->lblCarreraP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->lblCarreraP->Location = System::Drawing::Point(51, 145);
-			this->lblCarreraP->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->lblCarreraP->Location = System::Drawing::Point(38, 118);
 			this->lblCarreraP->Name = L"lblCarreraP";
-			this->lblCarreraP->Size = System::Drawing::Size(73, 20);
+			this->lblCarreraP->Size = System::Drawing::Size(59, 16);
 			this->lblCarreraP->TabIndex = 0;
 			this->lblCarreraP->Text = L"Carrera";
 			// 
@@ -308,11 +295,10 @@ namespace SistemaAcademico {
 			this->DGVPensum->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->DGVPensum->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->DGVPensum->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->DGVPensum->Location = System::Drawing::Point(53, 286);
-			this->DGVPensum->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->DGVPensum->Location = System::Drawing::Point(40, 232);
 			this->DGVPensum->Name = L"DGVPensum";
 			this->DGVPensum->RowHeadersWidth = 51;
-			this->DGVPensum->Size = System::Drawing::Size(835, 228);
+			this->DGVPensum->Size = System::Drawing::Size(626, 185);
 			this->DGVPensum->TabIndex = 8;
 			// 
 			// panelPensum
@@ -322,9 +308,8 @@ namespace SistemaAcademico {
 			this->panelPensum->Controls->Add(this->lblCarreraP);
 			this->panelPensum->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelPensum->Location = System::Drawing::Point(0, 0);
-			this->panelPensum->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->panelPensum->Name = L"panelPensum";
-			this->panelPensum->Size = System::Drawing::Size(935, 626);
+			this->panelPensum->Size = System::Drawing::Size(701, 509);
 			this->panelPensum->TabIndex = 1;
 			this->panelPensum->Visible = false;
 			// 
@@ -333,29 +318,30 @@ namespace SistemaAcademico {
 			this->panel1->Controls->Add(this->listView1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(935, 626);
+			this->panel1->Size = System::Drawing::Size(701, 509);
 			this->panel1->TabIndex = 9;
 			this->panel1->Visible = false;
 			// 
 			// listView1
 			// 
 			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(85, 168);
+			this->listView1->Location = System::Drawing::Point(40, 104);
+			this->listView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(121, 97);
+			this->listView1->Size = System::Drawing::Size(625, 184);
 			this->listView1->TabIndex = 0;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			// 
 			// ViewEstudiantes
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(935, 626);
+			this->ClientSize = System::Drawing::Size(701, 509);
 			this->Controls->Add(this->panelMenu);
 			this->Controls->Add(this->panelPensum);
 			this->Controls->Add(this->panelMain);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ViewEstudiantes";
 			this->Text = L"ViewEstudiantes";
 			this->panelMenu->ResumeLayout(false);
@@ -372,6 +358,7 @@ namespace SistemaAcademico {
 		}
 #pragma endregion
 	private: System::Void btnPensum_Click(System::Object^ sender, System::EventArgs^ e) {
+
 		std::string codigo = msclr::interop::marshal_as<std::string>(estInf->CodigoCarrera);
 		List<Entities::Pensum^>^ pensums = DataHandler::getPensum(codigo);
 
@@ -416,8 +403,6 @@ namespace SistemaAcademico {
 		panelMain->Visible = true;
 		panelPensum->Visible = false;
 	}
-
-
 
 };
 }

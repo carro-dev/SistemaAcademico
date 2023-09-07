@@ -16,6 +16,9 @@
     <Filter Include="Archivos de encabezado\Estudiantes">
       <UniqueIdentifier>{c4bcd0fc-6e93-40b6-a908-c46c89f2e6f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Admin">
+      <UniqueIdentifier>{d46223ce-56f7-4bd9-a3dc-08db05da37c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Login.cpp">
@@ -27,11 +30,14 @@
     <ClCompile Include="Entities.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="ViewEstudiantes.cpp">
+      <Filter>Archivos de encabezado\Estudiantes</Filter>
+    </ClCompile>
     <ClCompile Include="MainAdmin.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="ViewEstudiantes.cpp">
-      <Filter>Archivos de encabezado\Estudiantes</Filter>
+    <ClCompile Include="MyForm1.cpp">
+      <Filter>Archivos de encabezado\Admin</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="ViewEstudiantes.h">
       <Filter>Archivos de encabezado\Estudiantes</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm1.h">
+      <Filter>Archivos de encabezado\Admin</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

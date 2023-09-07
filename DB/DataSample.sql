@@ -10,6 +10,7 @@ Insert into TblUsuarios (id_rol,clave) values (1,"test2");
 Insert into TblUsuarios (id_rol,clave) values (1,"test3");
 Insert into TblUsuarios (id_rol,clave) values (1,"test4");
 Insert into TblUsuarios (id_rol,clave) values (1,"test5");
+Insert into TblUsuarios (id_rol,clave) values (1,"test6");
 
 -- Areas --
 Insert into TblAreas (codigo_area,nombre_area) values ("ING","Ingenieria");
@@ -27,6 +28,7 @@ Insert into TblEstudiantes values ("1107613",2,"IDS","Aliany","Gonzalez");
 Insert into TblEstudiantes values ("1107614",3,"IDS","Metzly","Reyes");
 Insert into TblEstudiantes values ("1107615",4,"SIS","Diego","Valentim");
 Insert into TblEstudiantes values ("1107616",5,"PSI","Jhon","Torres");
+Insert into TblEstudiantes values ("1109203",6,"IDS","Mateo","Vallejo");
 
 -- Docentes --
 Insert into TblDocentes (nombre_docente,apellido_docente) values ("Juan","Perez");

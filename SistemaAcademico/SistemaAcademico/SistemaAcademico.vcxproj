@@ -126,6 +126,7 @@
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainAdmin.cpp" />
+    <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="ViewEstudiantes.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainAdmin.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ViewEstudiantes.h">

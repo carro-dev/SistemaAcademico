@@ -167,6 +167,7 @@ namespace SistemaAcademico {
 		std::string username = msclr::interop::marshal_as<std::string>(txtMatricula->Text);
 		std::string password = msclr::interop::marshal_as<std::string>(txtPassw->Text);
 
+
 		//Se hace llamado a la funcion Login de DataHandler
 
 		if (username == "" || password == "") {
