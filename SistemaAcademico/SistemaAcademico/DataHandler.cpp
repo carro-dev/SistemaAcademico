@@ -109,4 +109,39 @@ namespace DataMySql {
         return pensums;
       
     }
+
+    vector<Materias> DataHandler::getMaterias() {
+        MYSQL* conn = getDBConnection();
+        MYSQL_RES* res;
+        MYSQL_ROW row;
+        std::vector<Materias> materias;
+
+        std::string query = "select * from VW_GetMaterias";
+        if (mysql_query(conn, query.c_str()) != 0) {
+            mysql_close(conn);
+            return materias; // Error en la consulta
+        }
+
+        res = mysql_store_result(conn);
+        if (res == NULL) {
+            mysql_close(conn);
+            return materias; // Error al obtener el resultado de la consulta
+        }
+
+        while ((row = mysql_fetch_row(res)) != nullptr) {
+
+            std::string codigo_materia = row[0];
+            std::string nombre_materia = row[1];
+            std::string creditos = row[2];
+
+            Materias^ materia = gcnew Materias(codigo_materia,nombre_materia,creditos);
+
+            materias.push_back(materia);
+        }
+
+        mysql_free_result(res);
+        mysql_close(conn);
+
+        return materias;
+    }
 }

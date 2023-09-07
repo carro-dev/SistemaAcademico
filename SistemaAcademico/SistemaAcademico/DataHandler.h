@@ -8,6 +8,7 @@ namespace DataMySql {
 	public:
 		static Entities::Estudiantes^ login(const std::string&,const std::string& password);
 		static std::vector<Entities::Pensum> getPensum(const std::string& codigoCarrera);
+		static std::vector<Entities::Materias> getMaterias();
 	};
 }
 

@@ -168,17 +168,23 @@ namespace SistemaAcademico {
 		std::string password = msclr::interop::marshal_as<std::string>(txtPassw->Text);
 
 		//Se hace llamado a la funcion Login de DataHandler
-		Estudiantes^ estudiante = DataHandler::login(username, password);
 
-		
-		if (estudiante->Matricula != "") {
-			ViewEstudiantes^ mainestudiantes = gcnew ViewEstudiantes(estudiante);
-			mainestudiantes->Show();
-			this->Hide();
-	
+		if (username == "" || password == "") {
+			MessageBox::Show("Error: Debe llenar todos los campos", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		else {
-			MessageBox::Show("Error: Datos Incorrectos","Error",MessageBoxButtons::OK,MessageBoxIcon::Error);
+			Estudiantes^ estudiante = DataHandler::login(username, password);
+
+
+			if (estudiante->Matricula != "") {
+				ViewEstudiantes^ mainestudiantes = gcnew ViewEstudiantes(estudiante);
+				mainestudiantes->Show();
+				this->Hide();
+
+			}
+			else {
+				MessageBox::Show("Error: Datos Incorrectos", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 		}
 	}
 };

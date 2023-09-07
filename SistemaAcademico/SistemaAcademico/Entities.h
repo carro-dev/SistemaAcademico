@@ -56,6 +56,35 @@ namespace Entities {
 
 	};
 
+    public ref class Materias {
+    private:
+        System::String^ codigo_materia;
+        System::String^ nombre_materia;
+        System::String^ creditos;
+
+    public:
+        Materias();
+        Materias(System::String^ codigo_materia, System::String^ nombre_materia, System::String^ creditos);
+
+        property  System::String^ CodigoMateria {
+            System::String^ get() {
+                return gcnew  System::String(codigo_materia);
+            }
+        }
+
+        property  System::String^ NombreMateria {
+            System::String^ get() {
+                return gcnew  System::String(nombre_materia);
+            }
+        }
+
+        property  System::String^ Creditos {
+            System::String^ get() {
+                return gcnew  System::String(creditos);
+            }
+        }
+    };
+
 	class Pensum {
 	private:
 		std::string nombre_carrera;

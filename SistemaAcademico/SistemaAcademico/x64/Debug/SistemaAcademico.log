@@ -1,5 +1,8 @@
 ﻿  Login.cpp
-  ViewEstudiantes.cpp
-  Generando código...
-  DataHandler.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+DataHandler.obj : warning LNK4099: PDB '' was not found with 'DataHandler.obj' or at ''; linking object as if no debug info
+  DataHandler.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+DataHandler.obj : warning LNK4099: PDB '' was not found with 'DataHandler.obj' or at ''; linking object as if no debug info
+Entities.obj : warning LNK4099: PDB '' was not found with 'Entities.obj' or at ''; linking object as if no debug info
+MainAdmin.obj : warning LNK4099: PDB '' was not found with 'MainAdmin.obj' or at ''; linking object as if no debug info
+.NETFramework,Version=v4.8.AssemblyAttributes.obj : warning LNK4099: PDB '' was not found with '.NETFramework,Version=v4.8.AssemblyAttributes.obj' or at ''; linking object as if no debug info
   SistemaAcademico.vcxproj -> C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.exe

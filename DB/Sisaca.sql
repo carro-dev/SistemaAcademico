@@ -439,6 +439,8 @@ inner join TblCarreras on TblCarreras.codigo_carrera = TblEstudiantes.codigo_car
 where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
 end$$
 
+call SP_GetUser('1090096','test1')
+
 DELIMITER $$
 Create procedure SP_GetPensum(IN SPcodigo_carrera char(7))
 begin
@@ -450,3 +452,23 @@ where TblMateriasEnCarrera.codigo_carrera = SPcodigo_carrera;
 end$$
 
 call SP_GetPensum("IDS")
+
+
+DELIMITER $$
+create procedure SP_GetSecciones(SPcodigo_materia char(7))
+begin
+select TblSecciones.numero_seccion,TblMaterias.codigo_materia,TblMaterias.nombre_materia,TblDocentes.nombre_docente,TblDocentes.apellido_docente,TblSecciones.horario
+from ((TblSecciones
+inner join TblMaterias on TblSecciones.codigo_materia = TblMaterias.codigo_materia)
+inner join TblDocentes on TblSecciones.id_docente = TblDocentes.id_docente)
+where TblSecciones.codigo_materia = SPcodigo_materia;
+end$$
+
+call SP_GetSecciones('IDS201')
+
+DELIMITER $$
+Create view VW_GetMaterias as
+select codigo_materia,nombre_materia,creditos from TblMaterias
+end$$
+
+select * from VW_GetMaterias
