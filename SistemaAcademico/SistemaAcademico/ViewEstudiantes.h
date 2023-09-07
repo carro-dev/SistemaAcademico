@@ -75,8 +75,10 @@ namespace SistemaAcademico {
 	private: System::Windows::Forms::Label^ lblCarreraP;
 	private: System::Windows::Forms::DataGridView^ DGVPensum;
 	private: System::Windows::Forms::Panel^ panelPensum;
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::ListView^ listView1;
+	private: System::Windows::Forms::Panel^ panelSeleccion;
+	private: System::Windows::Forms::ListView^ lstMaterias;
+
+
 
 
 
@@ -125,14 +127,14 @@ namespace SistemaAcademico {
 			this->lblCarreraP = (gcnew System::Windows::Forms::Label());
 			this->DGVPensum = (gcnew System::Windows::Forms::DataGridView());
 			this->panelPensum = (gcnew System::Windows::Forms::Panel());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->panelSeleccion = (gcnew System::Windows::Forms::Panel());
+			this->lstMaterias = (gcnew System::Windows::Forms::ListView());
 			this->panelMenu->SuspendLayout();
 			this->panelMain->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVMateriasSeleccionadas))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVPensum))->BeginInit();
 			this->panelPensum->SuspendLayout();
-			this->panel1->SuspendLayout();
+			this->panelSeleccion->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelMenu
@@ -161,6 +163,7 @@ namespace SistemaAcademico {
 			this->btnselec->TabIndex = 8;
 			this->btnselec->Text = L"Seleccion";
 			this->btnselec->UseVisualStyleBackColor = false;
+			this->btnselec->Click += gcnew System::EventHandler(this, &ViewEstudiantes::btnselec_Click);
 			// 
 			// btninicio
 			// 
@@ -303,7 +306,7 @@ namespace SistemaAcademico {
 			// 
 			// panelPensum
 			// 
-			this->panelPensum->Controls->Add(this->panel1);
+			this->panelPensum->Controls->Add(this->panelSeleccion);
 			this->panelPensum->Controls->Add(this->DGVPensum);
 			this->panelPensum->Controls->Add(this->lblCarreraP);
 			this->panelPensum->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -313,26 +316,27 @@ namespace SistemaAcademico {
 			this->panelPensum->TabIndex = 1;
 			this->panelPensum->Visible = false;
 			// 
-			// panel1
+			// panelSeleccion
 			// 
-			this->panel1->Controls->Add(this->listView1);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(701, 509);
-			this->panel1->TabIndex = 9;
-			this->panel1->Visible = false;
+			this->panelSeleccion->Controls->Add(this->lstMaterias);
+			this->panelSeleccion->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panelSeleccion->Location = System::Drawing::Point(0, 0);
+			this->panelSeleccion->Margin = System::Windows::Forms::Padding(2);
+			this->panelSeleccion->Name = L"panelSeleccion";
+			this->panelSeleccion->Size = System::Drawing::Size(701, 509);
+			this->panelSeleccion->TabIndex = 9;
+			this->panelSeleccion->Visible = false;
 			// 
-			// listView1
+			// lstMaterias
 			// 
-			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(40, 104);
-			this->listView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(625, 184);
-			this->listView1->TabIndex = 0;
-			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->lstMaterias->HideSelection = false;
+			this->lstMaterias->Location = System::Drawing::Point(40, 104);
+			this->lstMaterias->Margin = System::Windows::Forms::Padding(2);
+			this->lstMaterias->Name = L"lstMaterias";
+			this->lstMaterias->Size = System::Drawing::Size(625, 184);
+			this->lstMaterias->TabIndex = 0;
+			this->lstMaterias->UseCompatibleStateImageBehavior = false;
+			this->lstMaterias->View = View::Details;
 			// 
 			// ViewEstudiantes
 			// 
@@ -342,6 +346,7 @@ namespace SistemaAcademico {
 			this->Controls->Add(this->panelMenu);
 			this->Controls->Add(this->panelPensum);
 			this->Controls->Add(this->panelMain);
+			this->Controls->Add(this->panelSeleccion);
 			this->Name = L"ViewEstudiantes";
 			this->Text = L"ViewEstudiantes";
 			this->panelMenu->ResumeLayout(false);
@@ -351,7 +356,7 @@ namespace SistemaAcademico {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVPensum))->EndInit();
 			this->panelPensum->ResumeLayout(false);
 			this->panelPensum->PerformLayout();
-			this->panel1->ResumeLayout(false);
+			this->panelSeleccion->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -398,11 +403,41 @@ namespace SistemaAcademico {
 
 		panelMain->Visible = false;
 		panelPensum->Visible = true;
+		panelSeleccion->Visible = false;
 	}
 	private: System::Void btninicio_Click(System::Object^ sender, System::EventArgs^ e) {
 		panelMain->Visible = true;
 		panelPensum->Visible = false;
+		panelSeleccion->Visible = false;
 	}
 
+private: System::Void btnselec_Click(System::Object^ sender, System::EventArgs^ e) {
+	panelMain->Visible = false;
+	panelPensum->Visible = false;
+	panelSeleccion->Visible = true;
+
+	List<Entities::Materias^>^ materias = DataHandler::getMaterias();
+
+	lstMaterias->Items->Clear();
+
+	lstMaterias->Columns->Add("Codigo Materia", 100);
+	lstMaterias->Columns->Add("Nombre Materia", 100);
+	lstMaterias->Columns->Add("Creditos", 100);
+
+	for each (ColumnHeader ^ column in lstMaterias->Columns) {
+		column->Text = column->Text;
+	}
+
+
+	for each (Materias ^ materia in materias) {
+		ListViewItem^ item = gcnew ListViewItem(gcnew array<String^>{
+			materia->CodigoMateria, 
+			materia->NombreMateria, 
+			materia->Creditos
+		});
+
+		lstMaterias->Items->Add(item);
+	}
+}
 };
 }

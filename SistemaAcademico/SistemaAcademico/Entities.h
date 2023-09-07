@@ -121,5 +121,56 @@ namespace Entities {
             }
         }
     };
+
+    public ref class Secciones {
+    private:
+        System::String^ numero_seccion;
+        System::String^ codigo_materia;
+        System::String^ nombre_materia;
+        System::String^ nombre_docente;
+        System::String^ apellido_docente;
+        System::String^ horario;
+
+    public:
+        Secciones();
+        Secciones(System::String^ numero_seccion, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ nombre_docente, System::String^ apellido_docente, System::String^ horario);
+
+        property  System::String^ NumeroSeccion {
+            System::String^ get() {
+                return gcnew  System::String(numero_seccion);
+            }
+        }
+
+        property  System::String^ CodigoCarrera {
+            System::String^ get() {
+                return gcnew  System::String(codigo_materia);
+            }
+        }
+
+        property  System::String^ NombreCarrera {
+            System::String^ get() {
+                return gcnew  System::String(nombre_materia);
+            }
+        }
+
+        property  System::String^ NombreDocente {
+            System::String^ get() {
+                return gcnew  System::String(nombre_docente);
+            }
+        }
+
+        property  System::String^ ApellidoDocente {
+            System::String^ get() {
+                return gcnew  System::String(apellido_docente);
+            }
+        }
+
+        property  System::String^ Horario {
+            System::String^ get() {
+                return gcnew  System::String(horario);
+            }
+        }
+
+    };
 }
 

@@ -145,4 +145,44 @@ namespace DataMySql {
 
         return materias;
     }
+
+    List<Secciones^>^ DataHandler::getSecciones(const std::string& codigoCarrera) {
+        MYSQL* conn = getDBConnection();
+        MYSQL_RES* res;
+        MYSQL_ROW row;
+        List<Entities::Secciones^>^ secciones = gcnew List<Entities::Secciones^>();
+
+        std::string query = "call SP_GetSecciones('"+ codigoCarrera +"')";
+        if (mysql_query(conn, query.c_str()) != 0) {
+            mysql_close(conn);
+            return secciones; // Error en la consulta
+        }
+
+        res = mysql_store_result(conn);
+        if (res == NULL) {
+            mysql_close(conn);
+            return secciones; // Error al obtener el resultado de la consulta
+        }
+
+        while ((row = mysql_fetch_row(res)) != nullptr) {
+
+            System::String^ numero_seccion = gcnew System::String(row[0]);
+            System::String^ codigo_materia = gcnew System::String(row[1]);
+            System::String^ nombre_materia = gcnew System::String(row[2]);
+            System::String^ nombre_docente = gcnew System::String(row[2]);
+            System::String^ apellido_docente = gcnew System::String(row[2]);
+            System::String^ horario = gcnew System::String(row[2]);
+
+            Entities::Secciones^ seccion = gcnew Entities::Secciones(numero_seccion, codigo_materia, nombre_materia, nombre_docente, apellido_docente, horario);
+            secciones->Add(seccion);
+
+        }
+
+        mysql_free_result(res);
+        mysql_close(conn);
+
+        return secciones;
+    }
+
+
 }

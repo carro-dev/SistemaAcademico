@@ -13,3 +13,4 @@ C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcad
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.MainAdmin.resources
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.ViewEstudiantes.resources
 C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.vcxproj.GenerateResource.cache
+C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.SeccionAdmin.resources

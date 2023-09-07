@@ -22,4 +22,13 @@ namespace Entities {
 	Pensum::Pensum(System::String^ nombre_carrera, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ creditos)
 		: nombre_carrera(nombre_carrera), codigo_materia(codigo_materia), nombre_materia(nombre_materia), creditos(creditos) {}
 
+	Secciones::Secciones() : numero_seccion(""), codigo_materia(""), nombre_materia(""), nombre_docente(""), apellido_docente(""), horario("") {}
+	Secciones::Secciones(System::String^ numero_seccion, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ nombre_docente, System::String^ apellido_docente, System::String^ horario)
+		: numero_seccion(numero_seccion),
+		codigo_materia(codigo_materia),
+		nombre_materia(nombre_materia),
+		nombre_docente(nombre_docente),
+		apellido_docente(apellido_docente),
+		horario(horario){}
+
 }
