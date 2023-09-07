@@ -12,8 +12,8 @@ namespace Entities {
 		rol(rol) {}
 
 	Materias::Materias() : codigo_materia(""), nombre_materia(""),creditos(""){}
-	Materias::Materias(System::String^ codigo_materia, System::String^ nombre_materia, System::String^ creditos) :
-		codigo_materia(codigo_materia),
+	Materias::Materias(System::String^ codigo_materia, System::String^ nombre_materia, System::String^ creditos) 
+		: codigo_materia(codigo_materia),
 		nombre_materia(nombre_materia),
 		creditos(creditos){}
 

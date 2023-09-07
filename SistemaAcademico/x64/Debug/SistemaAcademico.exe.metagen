@@ -33,6 +33,17 @@ Class Entities.Estudiantes: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
     get_Nombre(): PrivateScope, Public, HideBySig, SpecialName
     get_Apellido(): PrivateScope, Public, HideBySig, SpecialName
     get_Rol(): PrivateScope, Public, HideBySig, SpecialName
+Class Entities.Materias: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Creditos 'get ' : 
+    System.String NombreMateria 'get ' : 
+    System.String CodigoMateria 'get ' : 
+  Methods:
+    get_CodigoMateria(): PrivateScope, Public, HideBySig, SpecialName
+    get_NombreMateria(): PrivateScope, Public, HideBySig, SpecialName
+    get_Creditos(): PrivateScope, Public, HideBySig, SpecialName
 Class SistemaAcademico.ViewEstudiantes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Entities.Estudiantes): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

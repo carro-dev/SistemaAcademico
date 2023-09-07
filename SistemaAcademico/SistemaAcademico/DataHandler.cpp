@@ -8,6 +8,7 @@
 using namespace System::Windows::Forms;
 using namespace Entities;
 using namespace std;
+using namespace System::Collections::Generic;
 
 namespace DataMySql {
 
@@ -110,11 +111,11 @@ namespace DataMySql {
       
     }
 
-    vector<Materias> DataHandler::getMaterias() {
+    List<Materias^>^ DataHandler::getMaterias() {
         MYSQL* conn = getDBConnection();
         MYSQL_RES* res;
         MYSQL_ROW row;
-        std::vector<Materias> materias;
+        List<Entities::Materias^>^ materias = gcnew List<Entities::Materias^>();
 
         std::string query = "select * from VW_GetMaterias";
         if (mysql_query(conn, query.c_str()) != 0) {
@@ -130,13 +131,14 @@ namespace DataMySql {
 
         while ((row = mysql_fetch_row(res)) != nullptr) {
 
-            std::string codigo_materia = row[0];
-            std::string nombre_materia = row[1];
-            std::string creditos = row[2];
+            System::String^ codigo_materia = gcnew System::String(row[0]);
+            System::String^ nombre_materia = gcnew System::String(row[1]);
+            System::String^ creditos = gcnew System::String(row[2]);
 
-            Materias^ materia = gcnew Materias(codigo_materia,nombre_materia,creditos);
-
-            materias.push_back(materia);
+            if (codigo_materia && nombre_materia && creditos) {
+                Entities::Materias^ materia = gcnew Entities::Materias(codigo_materia, nombre_materia, creditos);
+                materias->Add(materia);
+            }
         }
 
         mysql_free_result(res);
