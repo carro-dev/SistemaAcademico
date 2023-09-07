@@ -19,19 +19,7 @@ namespace Entities {
 
 
 	Pensum::Pensum() : nombre_carrera(""), codigo_materia(""), nombre_materia(""), creditos("") {}
-	Pensum::Pensum(const std::string& nombre_carrera, const std::string& codigo_materia, const std::string& nombre_materia, const std::string& creditos)
+	Pensum::Pensum(System::String^ nombre_carrera, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ creditos)
 		: nombre_carrera(nombre_carrera), codigo_materia(codigo_materia), nombre_materia(nombre_materia), creditos(creditos) {}
 
-	std::string Pensum::Getnombrecarrera() const {
-		return nombre_carrera;
-	}
-	std::string Pensum::Getcodigomateria() const {
-		return codigo_materia;
-	}
-	std::string Pensum::Getnombremateria() const {
-		return nombre_materia;
-	}
-	std::string Pensum::Getcreditos() const {
-		return creditos;
-	}
 }

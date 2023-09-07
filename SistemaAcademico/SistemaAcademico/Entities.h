@@ -85,22 +85,41 @@ namespace Entities {
         }
     };
 
-	class Pensum {
-	private:
-		std::string nombre_carrera;
-		std::string codigo_materia;
-		std::string nombre_materia;
-		std::string creditos;
-		
-	public:
-		Pensum();
-		Pensum(const std::string& nombre_carrera, const std::string& codigo_materia, const std::string& nombre_materia, const std::string& creditos);
-		
-		std::string Getnombrecarrera() const;
-		std::string Getcodigomateria() const;
-		std::string Getnombremateria() const;
-		std::string Getcreditos() const;
+    public ref class Pensum
+    {
+    private:
+        System::String^ nombre_carrera;
+        System::String^ codigo_materia;
+        System::String^ nombre_materia;
+        System::String^ creditos;
 
-	};
+    public:
+        Pensum();
+        Pensum(System::String^ nombre_carrera, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ creditos);
+
+        property System::String^ NombreCarrera {
+            System::String^ get() {
+                return gcnew System::String(nombre_carrera);
+            }
+        }
+
+        property System::String^ CodigoMateria {
+            System::String^ get() {
+                return gcnew System::String(codigo_materia);
+            }
+        }
+
+        property System::String^ NombreMateria {
+            System::String^ get() {
+                return gcnew System::String(nombre_materia);
+            }
+        }
+
+        property System::String^ Creditos {
+            System::String^ get() {
+                return gcnew System::String(creditos);
+            }
+        }
+    };
 }
 

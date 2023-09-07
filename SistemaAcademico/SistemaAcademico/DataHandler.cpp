@@ -74,11 +74,11 @@ namespace DataMySql {
 
 	}
 
-    vector<Pensum> DataHandler::getPensum(const std::string& codigoCarrera) {
+    List<Pensum^>^ DataHandler::getPensum(const std::string& codigoCarrera) {
         MYSQL* conn = getDBConnection();
         MYSQL_RES* res;
         MYSQL_ROW row;
-        std::vector<Pensum> pensums;
+        List<Pensum^>^ pensums = gcnew List<Pensum^>();
 
         std::string query = "call SP_GetPensum('"+ codigoCarrera +"')";
         if (mysql_query(conn, query.c_str()) != 0) {
@@ -94,14 +94,14 @@ namespace DataMySql {
 
         while ((row = mysql_fetch_row(res)) != nullptr) {
   
-            std::string nombre_carrera = row[0];
-            std::string codigo_materia = row[1];
-            std::string nombre_materia = row[2];
-            std::string creditos = row[3];
+            System::String^ nombre_carrera = gcnew System::String(row[0]);
+            System::String^ codigo_materia = gcnew System::String(row[1]);
+            System::String^  nombre_materia = gcnew System::String(row[2]);
+            System::String^ creditos = gcnew System::String(row[3]);
 
-            Pensum pensum(nombre_carrera, codigo_materia, nombre_materia, creditos);
+            Pensum^ pensum = gcnew Pensum(nombre_carrera, codigo_materia, nombre_materia, creditos);
 
-            pensums.push_back(pensum);
+            pensums->Add(pensum);
         }
 
         mysql_free_result(res);
@@ -135,10 +135,10 @@ namespace DataMySql {
             System::String^ nombre_materia = gcnew System::String(row[1]);
             System::String^ creditos = gcnew System::String(row[2]);
 
-            if (codigo_materia && nombre_materia && creditos) {
-                Entities::Materias^ materia = gcnew Entities::Materias(codigo_materia, nombre_materia, creditos);
-                materias->Add(materia);
-            }
+
+            Entities::Materias^ materia = gcnew Entities::Materias(codigo_materia, nombre_materia, creditos);
+            materias->Add(materia);
+
         }
 
         mysql_free_result(res);

@@ -1,6 +1,3 @@
 ﻿  DataHandler.cpp
-  Login.cpp
-  ViewEstudiantes.cpp
-  Generating Code...
   DataHandler.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   SistemaAcademico.vcxproj -> C:\Users\Carlos N\Documents\GitHub\SistemaAcademico\SistemaAcademico\x64\Debug\SistemaAcademico.exe

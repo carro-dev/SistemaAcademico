@@ -14,6 +14,7 @@ namespace SistemaAcademico {
 	using namespace System::Drawing;
 	using namespace Entities;
 	using namespace DataMySql;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Resumen de ViewEstudiantes
@@ -335,6 +336,7 @@ namespace SistemaAcademico {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(935, 626);
 			this->panel1->TabIndex = 9;
+			this->panel1->Visible = false;
 			// 
 			// listView1
 			// 
@@ -371,7 +373,7 @@ namespace SistemaAcademico {
 #pragma endregion
 	private: System::Void btnPensum_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::string codigo = msclr::interop::marshal_as<std::string>(estInf->CodigoCarrera);
-		std::vector<Entities::Pensum> pensums = DataHandler::getPensum(codigo);
+		List<Entities::Pensum^>^ pensums = DataHandler::getPensum(codigo);
 
 		// Configurar las columnas del DataGridView (si aún no están configuradas)
 		if (DGVPensum->Columns->Count == 0) {
@@ -386,20 +388,22 @@ namespace SistemaAcademico {
 			DGVPensum->Columns->Add("creditos", "Creditos");
 		}
 
+		DGVPensum->Rows->Clear();
+
 		// Llenar el DataGridView con los datos de las materias
-		for (const Entities::Pensum& pensum : pensums) {
+		for each (Entities::Pensum^ pensum in pensums) {
 			DataGridViewRow^ row = gcnew DataGridViewRow();
 
 			DataGridViewCell^ cellCodigo = gcnew DataGridViewTextBoxCell();
-			cellCodigo->Value = gcnew System::String(pensum.Getcodigomateria().c_str());
+			cellCodigo->Value = pensum->CodigoMateria;
 			row->Cells->Add(cellCodigo);
 
 			DataGridViewCell^ cellNombre = gcnew DataGridViewTextBoxCell();
-			cellNombre->Value = gcnew System::String(pensum.Getnombremateria().c_str());
+			cellNombre->Value = pensum->NombreMateria;
 			row->Cells->Add(cellNombre);
 
 			DataGridViewCell^ cellCreditos = gcnew DataGridViewTextBoxCell();
-			cellCreditos->Value = gcnew System::String(pensum.Getcreditos().c_str());
+			cellCreditos->Value = pensum->Creditos;
 			row->Cells->Add(cellCreditos);
 
 			DGVPensum->Rows->Add(row);
