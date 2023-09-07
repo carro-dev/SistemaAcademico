@@ -44,3 +44,5 @@
 *.cache
 *.vsidx
 *.log
+*.ipch
+SistemaAcademico/.vs/SistemaAcademico/v17/.suo
