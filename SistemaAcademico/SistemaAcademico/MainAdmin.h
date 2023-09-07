@@ -151,7 +151,7 @@ namespace SistemaAcademico {
 			// 
 			this->txtcodigomat->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtcodigomat->Location = System::Drawing::Point(209, 193);
-			this->txtcodigomat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txtcodigomat->Margin = System::Windows::Forms::Padding(4);
 			this->txtcodigomat->Name = L"txtcodigomat";
 			this->txtcodigomat->Size = System::Drawing::Size(139, 22);
 			this->txtcodigomat->TabIndex = 5;
@@ -173,7 +173,7 @@ namespace SistemaAcademico {
 			// 
 			this->txtnommat->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtnommat->Location = System::Drawing::Point(209, 239);
-			this->txtnommat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txtnommat->Margin = System::Windows::Forms::Padding(4);
 			this->txtnommat->Name = L"txtnommat";
 			this->txtnommat->Size = System::Drawing::Size(391, 22);
 			this->txtnommat->TabIndex = 7;
@@ -194,7 +194,7 @@ namespace SistemaAcademico {
 			// 
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(209, 284);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(220, 24);
 			this->comboBox1->TabIndex = 9;
@@ -215,7 +215,7 @@ namespace SistemaAcademico {
 			// 
 			this->txtcreditos->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtcreditos->Location = System::Drawing::Point(209, 437);
-			this->txtcreditos->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->txtcreditos->Margin = System::Windows::Forms::Padding(4);
 			this->txtcreditos->Name = L"txtcreditos";
 			this->txtcreditos->Size = System::Drawing::Size(139, 22);
 			this->txtcreditos->TabIndex = 11;
@@ -237,7 +237,7 @@ namespace SistemaAcademico {
 			// 
 			this->cmbArea->FormattingEnabled = true;
 			this->cmbArea->Location = System::Drawing::Point(209, 329);
-			this->cmbArea->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->cmbArea->Margin = System::Windows::Forms::Padding(4);
 			this->cmbArea->Name = L"cmbArea";
 			this->cmbArea->Size = System::Drawing::Size(296, 24);
 			this->cmbArea->TabIndex = 13;
@@ -258,7 +258,7 @@ namespace SistemaAcademico {
 			// 
 			this->cmbcarrera->FormattingEnabled = true;
 			this->cmbcarrera->Location = System::Drawing::Point(209, 383);
-			this->cmbcarrera->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->cmbcarrera->Margin = System::Windows::Forms::Padding(4);
 			this->cmbcarrera->Name = L"cmbcarrera";
 			this->cmbcarrera->Size = System::Drawing::Size(296, 24);
 			this->cmbcarrera->TabIndex = 15;
@@ -272,7 +272,7 @@ namespace SistemaAcademico {
 			this->btnadd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnadd->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnadd->Location = System::Drawing::Point(37, 510);
-			this->btnadd->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnadd->Margin = System::Windows::Forms::Padding(4);
 			this->btnadd->Name = L"btnadd";
 			this->btnadd->Size = System::Drawing::Size(131, 39);
 			this->btnadd->TabIndex = 8;
@@ -290,7 +290,7 @@ namespace SistemaAcademico {
 				static_cast<System::Byte>(0)));
 			this->btnsec->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnsec->Location = System::Drawing::Point(192, 0);
-			this->btnsec->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnsec->Margin = System::Windows::Forms::Padding(4);
 			this->btnsec->Name = L"btnsec";
 			this->btnsec->Size = System::Drawing::Size(184, 55);
 			this->btnsec->TabIndex = 7;
@@ -307,7 +307,7 @@ namespace SistemaAcademico {
 				static_cast<System::Byte>(0)));
 			this->btnmat->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnmat->Location = System::Drawing::Point(0, 0);
-			this->btnmat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnmat->Margin = System::Windows::Forms::Padding(4);
 			this->btnmat->Name = L"btnmat";
 			this->btnmat->Size = System::Drawing::Size(184, 55);
 			this->btnmat->TabIndex = 8;
@@ -320,7 +320,7 @@ namespace SistemaAcademico {
 			this->panel1->Controls->Add(this->btnsec);
 			this->panel1->Controls->Add(this->btnmat);
 			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(935, 55);
 			this->panel1->TabIndex = 0;
@@ -347,7 +347,7 @@ namespace SistemaAcademico {
 			this->Controls->Add(this->linkLabel1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MainAdmin";
 			this->Text = L"MainAdmin";
 			this->Load += gcnew System::EventHandler(this, &MainAdmin::MainAdmin_Load);

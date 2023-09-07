@@ -126,7 +126,7 @@
     <ClCompile Include="Entities.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainAdmin.cpp" />
-    <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="SeccionAdmin.cpp" />
     <ClCompile Include="ViewEstudiantes.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +138,7 @@
     <ClInclude Include="MainAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
+    <ClInclude Include="SeccionAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ViewEstudiantes.h">
@@ -151,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainAdmin.resx">
       <DependentUpon>MainAdmin.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeccionAdmin.resx">
+      <DependentUpon>SeccionAdmin.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEstudiantes.resx">
       <DependentUpon>ViewEstudiantes.h</DependentUpon>
