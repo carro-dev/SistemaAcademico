@@ -124,6 +124,7 @@ namespace Entities {
 
     public ref class Secciones {
     private:
+        System::String^ id_seccion;
         System::String^ numero_seccion;
         System::String^ codigo_materia;
         System::String^ nombre_materia;
@@ -133,7 +134,13 @@ namespace Entities {
 
     public:
         Secciones();
-        Secciones(System::String^ numero_seccion, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ nombre_docente, System::String^ apellido_docente, System::String^ horario);
+        Secciones(System::String^ id_seccion, System::String^ numero_seccion, System::String^ codigo_materia, System::String^ nombre_materia, System::String^ nombre_docente, System::String^ apellido_docente, System::String^ horario);
+
+        property  System::String^ IdSeccion {
+            System::String^ get() {
+                return gcnew  System::String(id_seccion);
+            }
+        }
 
         property  System::String^ NumeroSeccion {
             System::String^ get() {
@@ -141,13 +148,13 @@ namespace Entities {
             }
         }
 
-        property  System::String^ CodigoCarrera {
+        property  System::String^ CodigoMateria {
             System::String^ get() {
                 return gcnew  System::String(codigo_materia);
             }
         }
 
-        property  System::String^ NombreCarrera {
+        property  System::String^ NombreMateria {
             System::String^ get() {
                 return gcnew  System::String(nombre_materia);
             }

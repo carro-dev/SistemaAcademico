@@ -440,7 +440,7 @@ where TblEstudiantes.matricula = SPmatricula and TblUsuarios.clave = SPclave;
 end$$
 
 call SP_GetUser('1090096','test1')
-
+select * from TblUsuarios
 DELIMITER $$
 Create procedure SP_GetPensum(IN SPcodigo_carrera char(7))
 begin
@@ -453,11 +453,11 @@ end$$
 
 call SP_GetPensum("IDS")
 
-
+use Sisaca
 DELIMITER $$
 create procedure SP_GetSecciones(SPcodigo_materia char(7))
 begin
-select TblSecciones.numero_seccion,TblMaterias.codigo_materia,TblMaterias.nombre_materia,TblDocentes.nombre_docente,TblDocentes.apellido_docente,TblSecciones.horario
+select TblSecciones.id_seccion,TblSecciones.numero_seccion,TblMaterias.codigo_materia,TblMaterias.nombre_materia,TblDocentes.nombre_docente,TblDocentes.apellido_docente,TblSecciones.horario
 from ((TblSecciones
 inner join TblMaterias on TblSecciones.codigo_materia = TblMaterias.codigo_materia)
 inner join TblDocentes on TblSecciones.id_docente = TblDocentes.id_docente)
@@ -471,4 +471,6 @@ Create view VW_GetMaterias as
 select codigo_materia,nombre_materia,creditos from TblMaterias
 end$$
 
-select * from VW_GetMaterias
+-- select * from VW_GetMaterias
+
+call SP_InsertarAlumnosSeccion()

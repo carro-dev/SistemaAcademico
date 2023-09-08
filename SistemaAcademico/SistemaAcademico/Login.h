@@ -3,6 +3,7 @@
 #include "DataHandler.h"
 #include "Entities.h"
 #include "ViewEstudiantes.h"
+#include "MainAdmin.h"
 
 namespace SistemaAcademico {
 
@@ -176,12 +177,18 @@ namespace SistemaAcademico {
 		else {
 			Estudiantes^ estudiante = DataHandler::login(username, password);
 
-
 			if (estudiante->Matricula != "") {
-				ViewEstudiantes^ mainestudiantes = gcnew ViewEstudiantes(estudiante);
-				mainestudiantes->Show();
-				this->Hide();
-
+				if (estudiante->Rol == "Estudiante")
+				{
+					ViewEstudiantes^ mainestudiantes = gcnew ViewEstudiantes(estudiante);
+					mainestudiantes->Show();
+					this->Hide();
+				}
+				else if (estudiante->Rol == "Admin") {
+					MainAdmin^ mainadmin = gcnew MainAdmin();
+					mainadmin->Show();
+					this->Hide();
+				}
 			}
 			else {
 				MessageBox::Show("Error: Datos Incorrectos", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);

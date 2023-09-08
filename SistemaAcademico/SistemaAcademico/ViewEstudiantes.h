@@ -2,6 +2,7 @@
 #include <msclr/marshal_cppstd.h>
 #include "Entities.h"
 #include "DataHandler.h"
+#include <nlohmann/json.hpp>
 
 namespace SistemaAcademico {
 
@@ -14,6 +15,7 @@ namespace SistemaAcademico {
 	using namespace Entities;
 	using namespace DataMySql;
 	using namespace System::Collections::Generic;
+	using json = nlohmann::json;
 
 	/// <summary>
 	/// Resumen de ViewEstudiantes
@@ -76,7 +78,15 @@ namespace SistemaAcademico {
 	private: System::Windows::Forms::DataGridView^ DGVPensum;
 	private: System::Windows::Forms::Panel^ panelPensum;
 	private: System::Windows::Forms::Panel^ panelSeleccion;
+
+
+	private: System::Windows::Forms::Button^ btnAgregarSeccion;
+	private: System::Windows::Forms::DataGridView^ DGVSecciones;
 	private: System::Windows::Forms::ListView^ lstMaterias;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+
+
 
 
 
@@ -128,13 +138,18 @@ namespace SistemaAcademico {
 			this->DGVPensum = (gcnew System::Windows::Forms::DataGridView());
 			this->panelPensum = (gcnew System::Windows::Forms::Panel());
 			this->panelSeleccion = (gcnew System::Windows::Forms::Panel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->lstMaterias = (gcnew System::Windows::Forms::ListView());
+			this->btnAgregarSeccion = (gcnew System::Windows::Forms::Button());
+			this->DGVSecciones = (gcnew System::Windows::Forms::DataGridView());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->panelMenu->SuspendLayout();
 			this->panelMain->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVMateriasSeleccionadas))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVPensum))->BeginInit();
 			this->panelPensum->SuspendLayout();
 			this->panelSeleccion->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVSecciones))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelMenu
@@ -144,8 +159,9 @@ namespace SistemaAcademico {
 			this->panelMenu->Controls->Add(this->btninicio);
 			this->panelMenu->Controls->Add(this->btnPensum);
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
+			this->panelMenu->Margin = System::Windows::Forms::Padding(4);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(701, 45);
+			this->panelMenu->Size = System::Drawing::Size(935, 55);
 			this->panelMenu->TabIndex = 5;
 			// 
 			// btnselec
@@ -157,9 +173,10 @@ namespace SistemaAcademico {
 			this->btnselec->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnselec->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->btnselec->Location = System::Drawing::Point(288, 0);
+			this->btnselec->Location = System::Drawing::Point(384, 0);
+			this->btnselec->Margin = System::Windows::Forms::Padding(4);
 			this->btnselec->Name = L"btnselec";
-			this->btnselec->Size = System::Drawing::Size(138, 45);
+			this->btnselec->Size = System::Drawing::Size(184, 55);
 			this->btnselec->TabIndex = 8;
 			this->btnselec->Text = L"Seleccion";
 			this->btnselec->UseVisualStyleBackColor = false;
@@ -175,8 +192,9 @@ namespace SistemaAcademico {
 				static_cast<System::Byte>(0)));
 			this->btninicio->ForeColor = System::Drawing::SystemColors::HighlightText;
 			this->btninicio->Location = System::Drawing::Point(0, 0);
+			this->btninicio->Margin = System::Windows::Forms::Padding(4);
 			this->btninicio->Name = L"btninicio";
-			this->btninicio->Size = System::Drawing::Size(138, 45);
+			this->btninicio->Size = System::Drawing::Size(184, 55);
 			this->btninicio->TabIndex = 7;
 			this->btninicio->Text = L"Inicio";
 			this->btninicio->UseVisualStyleBackColor = false;
@@ -191,9 +209,10 @@ namespace SistemaAcademico {
 			this->btnPensum->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnPensum->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->btnPensum->Location = System::Drawing::Point(144, 0);
+			this->btnPensum->Location = System::Drawing::Point(192, 0);
+			this->btnPensum->Margin = System::Windows::Forms::Padding(4);
 			this->btnPensum->Name = L"btnPensum";
-			this->btnPensum->Size = System::Drawing::Size(138, 45);
+			this->btnPensum->Size = System::Drawing::Size(184, 55);
 			this->btnPensum->TabIndex = 6;
 			this->btnPensum->Text = L"Ver Pensum";
 			this->btnPensum->UseVisualStyleBackColor = false;
@@ -210,8 +229,9 @@ namespace SistemaAcademico {
 			this->panelMain->Controls->Add(this->lblMatricula);
 			this->panelMain->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelMain->Location = System::Drawing::Point(0, 0);
+			this->panelMain->Margin = System::Windows::Forms::Padding(4);
 			this->panelMain->Name = L"panelMain";
-			this->panelMain->Size = System::Drawing::Size(701, 509);
+			this->panelMain->Size = System::Drawing::Size(935, 626);
 			this->panelMain->TabIndex = 8;
 			// 
 			// lblRol
@@ -220,9 +240,10 @@ namespace SistemaAcademico {
 			this->lblRol->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblRol->ForeColor = System::Drawing::Color::SteelBlue;
-			this->lblRol->Location = System::Drawing::Point(35, 77);
+			this->lblRol->Location = System::Drawing::Point(47, 95);
+			this->lblRol->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblRol->Name = L"lblRol";
-			this->lblRol->Size = System::Drawing::Size(47, 25);
+			this->lblRol->Size = System::Drawing::Size(58, 31);
 			this->lblRol->TabIndex = 11;
 			this->lblRol->Text = L"Rol";
 			// 
@@ -232,9 +253,10 @@ namespace SistemaAcademico {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::SteelBlue;
-			this->label1->Location = System::Drawing::Point(37, 227);
+			this->label1->Location = System::Drawing::Point(49, 279);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(197, 20);
+			this->label1->Size = System::Drawing::Size(239, 25);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Materias seleccionadas";
 			// 
@@ -243,10 +265,11 @@ namespace SistemaAcademico {
 			this->DGVMateriasSeleccionadas->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->DGVMateriasSeleccionadas->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->DGVMateriasSeleccionadas->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->DGVMateriasSeleccionadas->Location = System::Drawing::Point(40, 266);
+			this->DGVMateriasSeleccionadas->Location = System::Drawing::Point(53, 327);
+			this->DGVMateriasSeleccionadas->Margin = System::Windows::Forms::Padding(4);
 			this->DGVMateriasSeleccionadas->Name = L"DGVMateriasSeleccionadas";
 			this->DGVMateriasSeleccionadas->RowHeadersWidth = 51;
-			this->DGVMateriasSeleccionadas->Size = System::Drawing::Size(626, 185);
+			this->DGVMateriasSeleccionadas->Size = System::Drawing::Size(835, 228);
 			this->DGVMateriasSeleccionadas->TabIndex = 12;
 			// 
 			// lblNombre
@@ -254,9 +277,10 @@ namespace SistemaAcademico {
 			this->lblNombre->AutoSize = true;
 			this->lblNombre->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblNombre->Location = System::Drawing::Point(103, 145);
+			this->lblNombre->Location = System::Drawing::Point(137, 178);
+			this->lblNombre->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblNombre->Name = L"lblNombre";
-			this->lblNombre->Size = System::Drawing::Size(62, 18);
+			this->lblNombre->Size = System::Drawing::Size(79, 24);
 			this->lblNombre->TabIndex = 10;
 			this->lblNombre->Text = L"Nombre";
 			// 
@@ -265,9 +289,10 @@ namespace SistemaAcademico {
 			this->lblCarrera->AutoSize = true;
 			this->lblCarrera->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->lblCarrera->Location = System::Drawing::Point(38, 118);
+			this->lblCarrera->Location = System::Drawing::Point(51, 145);
+			this->lblCarrera->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblCarrera->Name = L"lblCarrera";
-			this->lblCarrera->Size = System::Drawing::Size(59, 16);
+			this->lblCarrera->Size = System::Drawing::Size(73, 20);
 			this->lblCarrera->TabIndex = 9;
 			this->lblCarrera->Text = L"Carrera";
 			// 
@@ -276,9 +301,10 @@ namespace SistemaAcademico {
 			this->lblMatricula->AutoSize = true;
 			this->lblMatricula->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lblMatricula->Location = System::Drawing::Point(38, 145);
+			this->lblMatricula->Location = System::Drawing::Point(51, 178);
+			this->lblMatricula->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblMatricula->Name = L"lblMatricula";
-			this->lblMatricula->Size = System::Drawing::Size(68, 18);
+			this->lblMatricula->Size = System::Drawing::Size(85, 24);
 			this->lblMatricula->TabIndex = 8;
 			this->lblMatricula->Text = L"Matricula";
 			// 
@@ -287,9 +313,10 @@ namespace SistemaAcademico {
 			this->lblCarreraP->AutoSize = true;
 			this->lblCarreraP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->lblCarreraP->Location = System::Drawing::Point(38, 118);
+			this->lblCarreraP->Location = System::Drawing::Point(51, 145);
+			this->lblCarreraP->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lblCarreraP->Name = L"lblCarreraP";
-			this->lblCarreraP->Size = System::Drawing::Size(59, 16);
+			this->lblCarreraP->Size = System::Drawing::Size(73, 20);
 			this->lblCarreraP->TabIndex = 0;
 			this->lblCarreraP->Text = L"Carrera";
 			// 
@@ -298,55 +325,106 @@ namespace SistemaAcademico {
 			this->DGVPensum->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->DGVPensum->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
 			this->DGVPensum->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->DGVPensum->Location = System::Drawing::Point(40, 232);
+			this->DGVPensum->Location = System::Drawing::Point(53, 286);
+			this->DGVPensum->Margin = System::Windows::Forms::Padding(4);
 			this->DGVPensum->Name = L"DGVPensum";
 			this->DGVPensum->RowHeadersWidth = 51;
-			this->DGVPensum->Size = System::Drawing::Size(626, 185);
+			this->DGVPensum->Size = System::Drawing::Size(835, 228);
 			this->DGVPensum->TabIndex = 8;
 			// 
 			// panelPensum
 			// 
-			this->panelPensum->Controls->Add(this->panelSeleccion);
 			this->panelPensum->Controls->Add(this->DGVPensum);
 			this->panelPensum->Controls->Add(this->lblCarreraP);
 			this->panelPensum->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelPensum->Location = System::Drawing::Point(0, 0);
+			this->panelPensum->Margin = System::Windows::Forms::Padding(4);
 			this->panelPensum->Name = L"panelPensum";
-			this->panelPensum->Size = System::Drawing::Size(701, 509);
+			this->panelPensum->Size = System::Drawing::Size(935, 626);
 			this->panelPensum->TabIndex = 1;
 			this->panelPensum->Visible = false;
 			// 
 			// panelSeleccion
 			// 
+			this->panelSeleccion->Controls->Add(this->label3);
+			this->panelSeleccion->Controls->Add(this->label2);
 			this->panelSeleccion->Controls->Add(this->lstMaterias);
+			this->panelSeleccion->Controls->Add(this->btnAgregarSeccion);
+			this->panelSeleccion->Controls->Add(this->DGVSecciones);
 			this->panelSeleccion->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelSeleccion->Location = System::Drawing::Point(0, 0);
-			this->panelSeleccion->Margin = System::Windows::Forms::Padding(2);
+			this->panelSeleccion->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panelSeleccion->Name = L"panelSeleccion";
-			this->panelSeleccion->Size = System::Drawing::Size(701, 509);
+			this->panelSeleccion->Size = System::Drawing::Size(935, 626);
 			this->panelSeleccion->TabIndex = 9;
 			this->panelSeleccion->Visible = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(52, 95);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(59, 16);
+			this->label2->TabIndex = 12;
+			this->label2->Text = L"Materias";
 			// 
 			// lstMaterias
 			// 
 			this->lstMaterias->HideSelection = false;
-			this->lstMaterias->Location = System::Drawing::Point(40, 104);
-			this->lstMaterias->Margin = System::Windows::Forms::Padding(2);
+			this->lstMaterias->Location = System::Drawing::Point(55, 129);
 			this->lstMaterias->Name = L"lstMaterias";
-			this->lstMaterias->Size = System::Drawing::Size(625, 184);
-			this->lstMaterias->TabIndex = 0;
+			this->lstMaterias->Size = System::Drawing::Size(830, 202);
+			this->lstMaterias->TabIndex = 11;
 			this->lstMaterias->UseCompatibleStateImageBehavior = false;
-			this->lstMaterias->View = View::Details;
+			this->lstMaterias->SelectedIndexChanged += gcnew System::EventHandler(this, &ViewEstudiantes::lstMaterias_SelectedIndexChanged);
+			// 
+			// btnAgregarSeccion
+			// 
+			this->btnAgregarSeccion->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->btnAgregarSeccion->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->btnAgregarSeccion->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->btnAgregarSeccion->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAgregarSeccion->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnAgregarSeccion->Location = System::Drawing::Point(757, 492);
+			this->btnAgregarSeccion->Margin = System::Windows::Forms::Padding(4);
+			this->btnAgregarSeccion->Name = L"btnAgregarSeccion";
+			this->btnAgregarSeccion->Size = System::Drawing::Size(131, 39);
+			this->btnAgregarSeccion->TabIndex = 9;
+			this->btnAgregarSeccion->Text = L"Agregar Seccion";
+			this->btnAgregarSeccion->UseVisualStyleBackColor = false;
+			this->btnAgregarSeccion->Click += gcnew System::EventHandler(this, &ViewEstudiantes::btnAgregarSeccion_Click);
+			// 
+			// DGVSecciones
+			// 
+			this->DGVSecciones->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->DGVSecciones->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
+			this->DGVSecciones->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->DGVSecciones->Location = System::Drawing::Point(53, 381);
+			this->DGVSecciones->Name = L"DGVSecciones";
+			this->DGVSecciones->RowHeadersWidth = 51;
+			this->DGVSecciones->RowTemplate->Height = 24;
+			this->DGVSecciones->Size = System::Drawing::Size(684, 150);
+			this->DGVSecciones->TabIndex = 1;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(51, 362);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(71, 16);
+			this->label3->TabIndex = 13;
+			this->label3->Text = L"Secciones";
 			// 
 			// ViewEstudiantes
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(701, 509);
+			this->ClientSize = System::Drawing::Size(935, 626);
 			this->Controls->Add(this->panelMenu);
+			this->Controls->Add(this->panelSeleccion);
 			this->Controls->Add(this->panelPensum);
 			this->Controls->Add(this->panelMain);
-			this->Controls->Add(this->panelSeleccion);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"ViewEstudiantes";
 			this->Text = L"ViewEstudiantes";
 			this->panelMenu->ResumeLayout(false);
@@ -357,6 +435,8 @@ namespace SistemaAcademico {
 			this->panelPensum->ResumeLayout(false);
 			this->panelPensum->PerformLayout();
 			this->panelSeleccion->ResumeLayout(false);
+			this->panelSeleccion->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->DGVSecciones))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -419,10 +499,13 @@ private: System::Void btnselec_Click(System::Object^ sender, System::EventArgs^ 
 	List<Entities::Materias^>^ materias = DataHandler::getMaterias();
 
 	lstMaterias->Items->Clear();
+	lstMaterias->Columns->Clear();
 
 	lstMaterias->Columns->Add("Codigo Materia", 100);
 	lstMaterias->Columns->Add("Nombre Materia", 100);
 	lstMaterias->Columns->Add("Creditos", 100);
+
+
 
 	for each (ColumnHeader ^ column in lstMaterias->Columns) {
 		column->Text = column->Text;
@@ -438,6 +521,111 @@ private: System::Void btnselec_Click(System::Object^ sender, System::EventArgs^ 
 
 		lstMaterias->Items->Add(item);
 	}
+}
+private: System::Void lstMaterias_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (lstMaterias->SelectedItems->Count > 0) {
+		System::String^ tempCodigo = lstMaterias->SelectedItems[0]->Text;
+		std::string codigo = msclr::interop::marshal_as<std::string>(tempCodigo);
+
+		List<Secciones^>^ secciones = DataHandler::getSecciones(codigo);
+
+		// Configurar las columnas del DataGridView (si aún no están configuradas)
+		if (DGVSecciones->Columns->Count == 0) {
+			DGVSecciones->Columns->Add("id_seccion", "ID Seccion");
+			DGVSecciones->Columns->Add("numero_seccion", "Numero Seccion");
+			DGVSecciones->Columns->Add("codigo_materia", "Codigo Materia");
+			DGVSecciones->Columns->Add("nombre_materia", "Nombre Materia");
+			DGVSecciones->Columns->Add("nombre_docente", "Nombre Docente");
+			DGVSecciones->Columns->Add("apellido_docente", "Apellido Docente");
+			DGVSecciones->Columns->Add("horario", "Horario");
+
+		}
+		else {
+			DGVSecciones->Columns->Clear();
+			DGVSecciones->Columns->Add("id_seccion", "ID Seccion");
+			DGVSecciones->Columns->Add("numero_seccion", "Numero Seccion");
+			DGVSecciones->Columns->Add("codigo_materia", "Codigo Materia");
+			DGVSecciones->Columns->Add("nombre_materia", "Nombre Materia");
+			DGVSecciones->Columns->Add("nombre_docente", "Nombre Docente");
+			DGVSecciones->Columns->Add("apellido_docente", "Apellido Docente");
+			DGVSecciones->Columns->Add("horario", "Horario");
+		}
+
+		DGVSecciones->Rows->Clear();
+
+
+
+		// Llenar el DataGridView con los datos de las materias
+		for each (Entities::Secciones ^ seccion in secciones) {
+			DataGridViewRow^ row = gcnew DataGridViewRow();
+
+			DataGridViewCell^ cellIdSeccion = gcnew DataGridViewTextBoxCell();
+			cellIdSeccion->Value = seccion->IdSeccion;
+			row->Cells->Add(cellIdSeccion);
+
+			DataGridViewCell^ cellNumSeccion = gcnew DataGridViewTextBoxCell();
+			cellNumSeccion->Value = seccion->NumeroSeccion;
+			row->Cells->Add(cellNumSeccion);
+
+			DataGridViewCell^ cellCodMateria = gcnew DataGridViewTextBoxCell();
+			cellCodMateria->Value = seccion->CodigoMateria;
+			row->Cells->Add(cellCodMateria);
+
+			DataGridViewCell^ cellNomMateria = gcnew DataGridViewTextBoxCell();
+			cellNomMateria->Value = seccion->NombreMateria;
+			row->Cells->Add(cellNomMateria);
+
+			DataGridViewCell^ cellNomDocente = gcnew DataGridViewTextBoxCell();
+			cellNomDocente->Value = seccion->NombreDocente;
+			row->Cells->Add(cellNomDocente);
+
+			DataGridViewCell^ cellApeDocente = gcnew DataGridViewTextBoxCell();
+			cellApeDocente->Value = seccion->ApellidoDocente;
+			row->Cells->Add(cellApeDocente);
+
+			//Aqui se analiza el json que devuelve el campo horario en la base de datos, y se le da formato en el DataGridView
+
+			String^ horarioJson = seccion->Horario;
+
+			try
+			{
+				json horarioArray = json::parse(msclr::interop::marshal_as<std::string>(horarioJson));
+
+				System::String^ horarioStr = "";
+
+				for (const auto& horario : horarioArray) {
+					String^ inicio = gcnew String(horario["Inicio"].get<std::string>().c_str());
+					String^ fin = gcnew String(horario["Fin"].get<std::string>().c_str());
+					horarioStr += inicio + " - " + fin + "\n";
+				}
+
+
+				DataGridViewCell^ cellHorario = gcnew DataGridViewTextBoxCell();
+				cellHorario->Value = horarioStr;
+				row->Cells->Add(cellHorario);
+			}
+			catch (const json::parse_error& e)
+			{
+					
+			}
+
+			DGVSecciones->Rows->Add(row);
+		}
+
+	}
+
+
+}
+private: System::Void btnAgregarSeccion_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	std::string idSeccion = msclr::interop::marshal_as<std::string>(DGVSecciones->SelectedRows[0]);
+	std::string matricula = msclr::interop::marshal_as<std::string>(estInf->Matricula);
+
+	if (idSeccion == "" || matricula == "") {
+		MessageBox::Show("Hubo un error");
+	}
+	DataHandler::Seleccionar(idSeccion, matricula);
 }
 };
 }

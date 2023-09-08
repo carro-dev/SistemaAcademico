@@ -11,6 +11,7 @@ namespace DataMySql {
 		static List<Entities::Pensum^>^ getPensum(const std::string& codigoCarrera);
 		static List<Entities::Materias^>^ getMaterias();
 		static List<Entities::Secciones^>^ getSecciones(const std::string& codigoCarrera);
+		static void Seleccionar(std::string& matricula, std::string& idSeccion);
 	};
 }
 
